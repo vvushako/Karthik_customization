@@ -1,0 +1,2995 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- [y] hybris Platform Copyright (c) 2000-2013 hybris AG All rights reserved. 
+	This software is the confidential and proprietary information of hybris ("Confidential 
+	Information"). You shall not disclose such Confidential Information and shall 
+	use it only in accordance with the terms of the license agreement you entered 
+	into with hybris. -->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<collectiontypes>
+		<collectiontype code="GenderList" elementtype="Gender"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="ProductVideoList" elementtype="ProductVideo"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="CategoryQuantityLimitConfList"
+			elementtype="CategoryQuantityLimitConf" autocreate="true" generate="true"
+			type="list" />
+		<collectiontype code="AllowedList" elementtype="java.lang.String"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="AthleteBlockList"
+			elementtype="SOCMSFeaturedAthleteBlockComponent" autocreate="true"
+			generate="true" type="list" />
+		<collectiontype code="CmsLinkCompList" elementtype="CMSLinkComponent"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="CMSSiteCollection" elementtype="CMSSite"
+			autocreate="true" generate="true" type="collection" />
+		<collectiontype code="BaseStoreCollection" elementtype="BaseStore"
+			autocreate="true" generate="true" type="collection" />
+		<collectiontype code="CreditCardTypeCollection"
+			elementtype="CreditCardType" autocreate="true" generate="true" type="collection" />
+		<collectiontype code="LatitudeRangeCollection"
+			elementtype="LatitudeRange" autocreate="true" generate="true" type="collection" />
+		<!-- <collectiontype code="P2PCollectionType" elementtype="ProductPartnerUrl" -->
+		<!-- autocreate="true" generate="true" type="list"/> -->
+		<collectiontype code="VariantProductCatalogExclusionList"
+			elementtype="java.lang.String" autocreate="true" generate="true"
+			type="list" />
+			<collectiontype code="LinkMediaList" elementtype="Media"
+			autocreate="true" generate="true" type="list" />
+		<collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
+		                type="set"/>
+	</collectiontypes>
+
+	<enumtypes>
+
+		<enumtype code="CreditCardType" generate="false" autocreate="false">
+			<value code="discover"></value>
+		</enumtype>
+
+		<enumtype generate="true" code="PriceType" autocreate="true"
+			dynamic="true">
+			<value code="WHOLESALEPRICE" />
+			<value code="MSRP" />
+			<value code="DISTRIBUTORPRICE" />
+			<value code="LISTPRICE" />
+			<value code="SALEPRICE" />
+		</enumtype>
+
+		<enumtype generate="true" code="ProductType" autocreate="true"
+			dynamic="true">
+			<value code="FG" />
+			<value code="KT" />
+			<value code="RA" />
+			<value code="RM" />
+			<value code="SA" />
+		</enumtype>
+
+		<enumtype generate="false" code="CheckoutFlowEnum"
+			autocreate="false" dynamic="true">
+			<value code="SINGLE" />
+		</enumtype>
+
+
+		<enumtype code="ProActive" autocreate="true" generate="true">
+			<value code="Approved" />
+			<value code="Expired" />
+			<value code="Denied" />
+			<value code="Pending" />
+			<value code="New" />
+		</enumtype>
+
+		<enumtype code="ProType" autocreate="true" generate="true">
+			<value code="Wholesale" />
+			<value code="TopTier" />
+			<value code="PROSHOP"></value>
+			<value code="SUPERPRO"></value>
+		</enumtype>
+
+		<enumtype code="ProductReferenceTypeEnum" autocreate="false"
+			generate="false">
+			<value code="RXLENS" />
+			<value code="RXCOATING" />
+			<value code="RELATEDFRAME" />
+			<value code="RELATEDLENS" />
+			<value code="RELATEDCOLOR" />
+			<value code="RELATEDSIZE" />
+			<value code="RELATEDPRODUCT" />
+		</enumtype>
+
+		<enumtype code="OrderStatus" autocreate="false" generate="false">
+			<value code="FS" />
+			<value code="AD" />
+			<value code="CX" />
+			<value code="BK" />
+			<value code="DS" />
+			<value code="CR" />
+			<value code="IP" />
+			<value code="NEW"/>
+			<value code="OPEN"/>
+			<value code="REPLACED"/>
+			<value code="NOT_CONFIRMED"/>
+			<value code="CONFIRMED"/>
+			<value code="RETURNED"/>
+			<value code="PARTLY_RETURNED"/>
+		</enumtype>
+
+		<enumtype code="Prodeal" autocreate="true" generate="true">
+			<value code="GOVX" />
+			<value code="IP" />
+			<value code="PSIA" />
+			<value code="REI" />
+			<value code="PROMOTIVE" />
+			<value code="THREEPOINT5" />
+		</enumtype>
+
+		<enumtype code="VoucherType" autocreate="true" generate="true"
+			dynamic="true">
+			<value code="THANKS" />
+			<value code="CASI" />
+			<value code="BONUS" />
+			<value code="MXI" />
+			<value code="MXR" />
+			<value code="OP" />
+			<value code="PROSHOP" />
+			<value code="VIP" />
+			<value code="CFP" />
+			<value code="RE" />
+			<value code="SE" />
+			<value code="SUPERPRO" />
+			<value code="KD" />
+			<value code="OAS" />
+		</enumtype>
+
+		<enumtype code="OrderFrequency" autocreate="true" generate="true"
+			dynamic="true">
+			<value code="ONCE_MONTH" />
+			<value code="NO_LIMIT" />
+		</enumtype>
+
+		<enumtype code="ExpirationPeriodType" autocreate="true"
+			generate="true" dynamic="false">
+			<value code="DAY" />
+			<value code="MONTH" />
+			<value code="YEAR" />
+		</enumtype>
+
+		<enumtype code="ProApplicationStatus" autocreate="true"
+			generate="true" dynamic="true">
+			<value code="CREATED" />
+			<value code="PROAPPROVED" />
+			<value code="SUPERPROAPPROVED" />
+			<value code="UNAPPROVED" />
+			<value code="PROEXPIRED" />
+			<value code="SUPERPROEXPIRED" />
+		</enumtype>
+
+		<enumtype code="ReminderStatus" autocreate="true" generate="true"
+			dynamic="true">
+			<value code="CREATED" />
+			<value code="SENT" />
+			<value code="CANCELED" />
+		</enumtype>
+
+		<enumtype code="ReminderType" autocreate="true" generate="true"
+			dynamic="true">
+			<value code="STOCK" />
+		</enumtype>
+
+		<enumtype code="PartnerOrgIDStatus" autocreate="true"
+			generate="true" dynamic="true">
+			<value code="AVAILABLE" />
+			<value code="INUSE" />
+			<value code="ERROR" />
+			<value code="EXPIRED" />
+			<value code="UNAPPROVED" />
+		</enumtype>
+
+		<enumtype code="GTSPositions" autocreate="true" generate="true"
+			dynamic="true">
+			<value code="BOTTOM_RIGHT" />
+			<value code="BOTTOM_LEFT" />
+			<value code="USER_DEFINED" />
+		</enumtype>
+		
+		<enumtype code="DeliveryStatus" autocreate="false" generate="false">
+			<value code="NOT_SHIPPED"/>
+			<value code="PART_SHIPPED"/>
+		</enumtype>
+		
+		<enumtype code="ConfirmationStatus" autocreate="true" generate="true" dynamic="true">
+			<value code="NOT_CONFIRMED"/>
+			<value code="CONFIRMED"/>
+		</enumtype>
+
+	<enumtype generate="true" code="SwatchColorEnum" autocreate="true" dynamic="true">
+			<value code="BLACK"/>
+			<value code="BLUE"/>
+			<value code="BROWN"/>
+			<value code="GREEN"/>
+			<value code="GREY"/>
+			<value code="ORANGE"/>
+			<value code="PINK"/>
+			<value code="PURPLE"/>
+			<value code="RED"/>
+			<value code="SILVER"/>
+			<value code="WHITE"/>
+			<value code="YELLOW"/>
+		</enumtype>
+	</enumtypes>
+
+	<relations>
+
+		<relation code="RestrictionsForNavigationNodes" generate="true"
+			localized="false" autocreate="true">
+			<deployment table="Restrictions4Navigation" typecode="32032"></deployment>
+			<sourceElement qualifier="nodes" type="CMSNavigationNode"
+				cardinality="many" />
+			<targetElement qualifier="restrictions" type="AbstractRestriction"
+				cardinality="many" collectiontype="list" ordered="true" />
+		</relation>
+
+		<relation localized="false" code="SOProduct2Feature"
+			autocreate="true" generate="true">
+			<deployment table="SOProduct2Feature" typecode="32021"></deployment>
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product">
+			</sourceElement>
+			<targetElement type="SOProductFeature" cardinality="many"
+				qualifier="featureList">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="PartnerOrg2PartnerOrgMemberID" autocreate="true">
+			<sourceElement type="PartnerOrg" cardinality="one"
+				qualifier="partner" />
+			<targetElement type="PartnerOrgMemberID" cardinality="many"
+				qualifier="memberID">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="PartnerOrg2PartnerOrgLocation" autocreate="true">
+			<sourceElement type="PartnerOrg" cardinality="one"
+				qualifier="partner" />
+			<targetElement type="PartnerOrgLocation" cardinality="many"
+				qualifier="location">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="PartnerOrgMemberID2PartnerOrgLocation" autocreate="true">
+			<sourceElement type="PartnerOrgLocation" cardinality="one"
+				qualifier="location" />
+			<targetElement type="PartnerOrgMemberID" cardinality="many"
+				qualifier="memberID">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false" code="User2PartnerOrgMemberID"
+			autocreate="true">
+			<sourceElement type="User" cardinality="one" qualifier="customer" />
+			<targetElement type="PartnerOrgMemberID" cardinality="many"
+				qualifier="memberID">
+			</targetElement>
+		</relation>
+
+		<relation localized="false" code="SOCustomer2Notes"
+			autocreate="true" generate="true">
+			<sourceElement type="Customer" cardinality="one"
+				qualifier="customer">
+			</sourceElement>
+			<targetElement type="Note" cardinality="many"
+				collectiontype="list" qualifier="note">
+			</targetElement>
+		</relation>
+
+		<relation localized="false" code="SOCustomer2Interests"
+			autocreate="true" generate="true">
+			<sourceElement type="Customer" cardinality="one"
+				qualifier="customer">
+			</sourceElement>
+			<targetElement type="Interest" cardinality="many"
+				qualifier="interest">
+			</targetElement>
+		</relation>
+
+		<relation localized="false" code="Partner2CMSSite"
+			autocreate="true" generate="true">
+			<deployment table="Partner2CMSSite" typecode="32040"></deployment>
+			<sourceElement type="Partner" cardinality="many"
+				qualifier="partners"></sourceElement>
+			<targetElement type="CMSSite" cardinality="many"
+				qualifier="sites"></targetElement>
+		</relation>
+
+		<relation localized="false" code="PartnerProductPartnerUrl"
+			autocreate="true" generate="true">
+			<sourceElement type="Partner" cardinality="one"
+				qualifier="partner"></sourceElement>
+			<targetElement type="ProductPartnerUrl" cardinality="many"
+				qualifier="productPartnerUrl"></targetElement>
+		</relation>
+
+		<relation localized="false" code="CountrySelectorTOFlag"
+			autocreate="true" generate="true">
+			<deployment table="CountrySelectorTOFlag" typecode="32002" />
+			<sourceElement type="CountrySelectorComponent"
+				cardinality="many" qualifier="countrySelector">
+			</sourceElement>
+			<targetElement type="SiteCountryFlag" cardinality="many"
+				qualifier="countryFlag">
+			</targetElement>
+		</relation>
+
+		<relation localized="false" code="CMSSiteToCountry"
+			autocreate="true" generate="true">
+			<deployment table="CMSSiteToCountry" typecode="32108" />
+			<sourceElement type="CMSSite" cardinality="many"
+				qualifier="sites"></sourceElement>
+			<targetElement type="Country" cardinality="many"
+				qualifier="isocode"></targetElement>
+		</relation>
+
+		<relation localized="false" code="HotCold2Country"
+			autocreate="true" generate="true">
+			<sourceElement type="HotColdConfiguration" cardinality="one"
+				qualifier="hotColdConfiguration"></sourceElement>
+			<targetElement type="IPLocationCountry" cardinality="many"
+				qualifier="country"></targetElement>
+		</relation>
+		<relation localized="false" code="HotCold2Region" autocreate="true"
+			generate="true">
+			<sourceElement type="HotColdConfiguration" cardinality="one"
+				qualifier="hotColdConfiguration"></sourceElement>
+			<targetElement type="IPLocationRegion" cardinality="many"
+				qualifier="region"></targetElement>
+		</relation>
+		<relation localized="false" code="HotCold2City" autocreate="true"
+			generate="true">
+			<sourceElement type="HotColdConfiguration" cardinality="one"
+				qualifier="hotColdConfiguration"></sourceElement>
+			<targetElement type="IPLocationCity" cardinality="many"
+				qualifier="city"></targetElement>
+		</relation>
+
+		<relation localized="false" code="POS2Product" autocreate="true"
+			generate="true">
+			<deployment table="POS2Product" typecode="32029" />
+			<sourceElement type="PointOfService" cardinality="many"
+				qualifier="dealers"></sourceElement>
+			<targetElement type="Product" cardinality="many"
+				qualifier="products"></targetElement>
+		</relation>
+
+		<relation localized="false" code="POS2Category" autocreate="true"
+			generate="true">
+			<deployment table="POS2Category" typecode="32030" />
+			<sourceElement type="PointOfService" cardinality="many"
+				qualifier="dealers"></sourceElement>
+			<targetElement type="DLCategory" cardinality="many"
+				qualifier="categories"></targetElement>
+		</relation>
+
+		<relation localized="false" code="Product2DLCategory"
+			autocreate="true" generate="true">
+			<deployment table="Product2DLCategory" typecode="32033" />
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product"></sourceElement>
+			<targetElement type="DLCategory" cardinality="many"
+				qualifier="dlcategories"></targetElement>
+		</relation>
+
+		<relation localized="false" code="ZoneDeliveryValue2UserGroups"
+			autocreate="true" generate="true">
+			<deployment table="ZoneValueGroups" typecode="32034" />
+			<sourceElement type="ZoneDeliveryModeValue"
+				cardinality="many" qualifier="zoneDeliveryModeValue"></sourceElement>
+			<targetElement type="UserGroup" cardinality="many"
+				qualifier="userGroup"></targetElement>
+		</relation>
+
+		<relation localized="false" code="ZoneDeliveryValue2Promotion"
+			autocreate="true" generate="true">
+			<deployment table="ZoneValuePromotion" typecode="32035" />
+			<sourceElement type="ZoneDeliveryModeValue"
+				cardinality="many" qualifier="zoneDeliveryModeValue"></sourceElement>
+			<targetElement type="AbstractPromotionConfiguration"
+				cardinality="many" qualifier="promotion"></targetElement>
+		</relation>
+
+		<relation localized="false" code="Zone2Region" autocreate="true"
+			generate="true">
+			<sourceElement type="Zone" cardinality="one" qualifier="zone"></sourceElement>
+			<targetElement type="Region" cardinality="many"
+				qualifier="region"></targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="ProApplication2ProApplicationProcess" autocreate="true">
+			<sourceElement type="ProApplication" cardinality="one"
+				qualifier="ProApplication">
+				<modifiers initial="true" optional="true" />
+			</sourceElement>
+			<targetElement type="ProApplicationProcess"
+				cardinality="many" qualifier="ProApplicationProcess">
+				<modifiers initial="true" optional="true" />
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="UserGroupPromotionConfiguration2UserGroup" autocreate="true">
+			<sourceElement type="UserGroupPromotionConfiguration"
+				cardinality="one" qualifier="groupPromotionConfiguration" />
+			<targetElement type="UserGroup" cardinality="many"
+				qualifier="group">
+				<modifiers optional="false" />
+			</targetElement>
+		</relation>
+
+		<!-- sortable Facet Relations -->
+
+		<relation generate="true" localized="false" code="VariantProduct2Size"
+			autocreate="true">
+			<sourceElement type="VariantProduct" cardinality="many"
+				qualifier="variant" />
+			<targetElement type="Size" cardinality="one" qualifier="size">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false"
+			code="VariantProduct2ColorFamily" autocreate="true">
+			<sourceElement type="VariantProduct" cardinality="many"
+				qualifier="varient" />
+			<targetElement type="ColorFamily" cardinality="one"
+				qualifier="colorFamilyLocale">
+			</targetElement>
+		</relation>
+
+		<relation generate="true" localized="false" code="Product2Fit"
+			autocreate="true">
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product" />
+			<targetElement type="Fit" cardinality="one" qualifier="fit">
+			</targetElement>
+		</relation>
+		<relation localized="false" code="Product2ProductBrand"
+			autocreate="true" generate="true">
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product"></sourceElement>
+			<targetElement type="ProductBrand" cardinality="one"
+				qualifier="brand"></targetElement>
+		</relation>
+
+
+		<relation generate="true" localized="false" code="Product2Shape"
+			autocreate="true">
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product" />
+			<targetElement type="Shape" cardinality="one"
+				qualifier="shape">
+			</targetElement>
+		</relation>
+		
+		<relation generate="true" localized="false" code="Product2Material" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="Material" cardinality="one" qualifier="productMaterial"/>
+  		</relation>
+  		
+  		<relation generate="true" localized="false" code="Product2Polarization" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="Polarization" cardinality="one" qualifier="polarization"/>
+  		</relation>
+
+		<relation generate="true" localized="false" code="Product2Rx" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="Rx" cardinality="one" qualifier="rx"/>
+  		</relation>
+  		
+  		<relation generate="true" localized="false" code="Product2ProductRimType" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="ProductRimType" cardinality="one" qualifier="productRimType"/>
+  		</relation>
+  		
+  		<relation generate="true" localized="false" code="Product2HingeType" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="HingeType" cardinality="one" qualifier="hingeType"/>
+  		</relation>
+  		 		
+		<relation generate="true" localized="false" code="Product2NewArrival" autocreate="true">
+   			<sourceElement type="Product" cardinality="many" qualifier="product"/>
+   			<targetElement type="NewArrival" cardinality="one" qualifier="newArrival"/>
+  		</relation>
+  		
+		<relation generate="true" localized="false" code="Product2Family"
+			autocreate="true">
+			<deployment table="Product2Family" typecode="32134" />
+			<sourceElement type="Product" cardinality="many"
+				qualifier="product" />
+			<targetElement type="family" cardinality="many"
+				qualifier="Family">
+			</targetElement>
+		</relation>
+
+
+		<relation generate="true" localized="false" code="Variant2LensTech"
+			autocreate="true">
+			<deployment table="Variant2LensTech" typecode="32136" />
+			<sourceElement type="VariantProduct" cardinality="many"
+				qualifier="variant" />
+			<targetElement type="LensTech" cardinality="many"
+				qualifier="lensTech">
+			</targetElement>
+		</relation>
+		
+		<relation generate="true" localized="false" code="Customer2GiftCardPaymentInfo" autocreate="true">
+   			<sourceElement type="Customer" cardinality="one" qualifier="customer"/>
+   			<targetElement type="GiftCardPaymentInfo" cardinality="many" qualifier="giftCardPaymentInfo"/>
+  		</relation>
+
+	</relations>
+
+	<itemtypes>
+
+		<itemtype code="Category" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="rxCategory" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="fishingCategory" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="CMSSiteRestriction" jaloclass="com.so.core.jalo.CMSSiteRestriction"
+			extends="AbstractRestriction" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="sites" type="CMSSiteCollection">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="BaseStoreRestriction" jaloclass="com.so.core.jalo.BaseStoreRestriction"
+			extends="AbstractRestriction" autocreate="true" generate="true">
+			<attributes>
+				<attribute qualifier="stores" type="BaseStoreCollection">
+					<persistence type="property" />
+					<modifiers optional="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="Country" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="groupEU" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="groupLATAM" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="regionLabel" type="localized:java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="BaseStore" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="customerType" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="creditCardTypes" type="CreditCardTypeCollection"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="SolrFacetSearchConfig" autocreate="false"
+			generate="false">
+			<attributes>
+				<attribute qualifier="sugestedProducts" type="ProductCollection"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="CMSSiteGroup" autocreate="true" generate="true"
+			extends="GenericItem" jaloclass="com.so.core.jalo.CMSSiteGroup">
+			<deployment table="CMSSiteGroup" typecode="32050" />
+			<attributes>
+				<attribute type="java.lang.String" qualifier="uid">
+					<persistence type="property"></persistence>
+					<modifiers optional="false" read="true" write="true" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="rootURL">
+					<persistence type="property"></persistence>
+					<modifiers optional="false" read="true" write="true" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="defaultURL">
+					<persistence type="property"></persistence>
+					<modifiers optional="false" read="true" write="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="CMSSite" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="isEcommerce" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="isRXEcommerce" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="rootSecureURL" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="rootURL" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="dealerLocatorCountryCode" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="dealerLocatorCountryName" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="ingnoreAVS" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="false" />
+					<defaultvalue>java.lang.Boolean.TRUE</defaultvalue>
+				</attribute>
+				<attribute qualifier="gaAccount" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="dealerLocatorDistance" type="java.lang.Double"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="dealerLocatorDisplayOnlineDealersList"
+					type="java.lang.Boolean" generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="proFormCategories" type="java.lang.String"
+					generate="true">
+					<persistence type="property">
+						<columntype database="oracle">
+							<value>CLOB</value>
+						</columntype>
+						<columntype>
+							<value>HYBRIS.LONG_STRING</value>
+						</columntype>
+					</persistence>
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="CMSSiteGroup" type="CMSSiteGroup"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+				<attribute qualifier="gtsStoreId" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+					<description>Google Trusted Stores ID</description>
+				</attribute>
+				<attribute qualifier="gtsBadgePosition" type="GTSPositions"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+					<description>Where do you want the badge to appear</description>
+				</attribute>
+				<attribute qualifier="gtsBadgeContainer" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+					<description>This is required if you choose USER_DEFINED, DIV ID where badge should appear.</description>
+				</attribute>
+				<attribute qualifier="gtsShoppingAccountId" type="java.lang.String"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+					<description>Field used when submitting data to Google. (Optional)</description>
+				</attribute>
+				<attribute qualifier="gtsEnable" type="java.lang.Boolean"
+					generate="true">
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+					<description>Checking this will generate the code on the site and checkout page.</description>
+				</attribute>
+				<attribute type="java.lang.String" qualifier="keyID">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<typegroup name="SO">
+			<!-- Definition for latitue range -->
+			<itemtype code="LatitudeRange" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.LatitudeRange">
+				<deployment table="LatitudeRange" typecode="9009" />
+				<attributes>
+					<attribute type="java.lang.Double" qualifier="rangeFrom">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="rangeTo">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<!-- Custom CMS Component -->
+			<itemtype code="SOCMSFeaturedAthleteComponent" generate="true"
+				jaloclass="so.com.core.jalo.SOCMSFeaturedAthleteComponent" extends="SimpleCMSComponent"
+				autocreate="true">
+				<attributes>
+					<attribute qualifier="blockList" generate="true"
+						autocreate="true" type="AthleteBlockList">
+						<persistence type="property" />
+						<description>Attribute that represents title of the tab.</description>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOCMSFeaturedAthleteBlockComponent"
+				generate="true" extends="CMSParagraphComponent" autocreate="true"
+				jaloclass="so.com.core.jalo.SOCMSFeaturedAthleteBlockComponent">
+				<description>It represents tap paragraph component. Contains some additional attributes that are required to display paragraph as a tab.</description>
+				<attributes>
+					<attribute qualifier="image" generate="true" autocreate="true"
+						type="CMSImageComponent">
+						<persistence type="property" />
+						<description>Attribute that represents title of the tab.</description>
+					</attribute>
+					<attribute qualifier="productCarousel" generate="true"
+						autocreate="true" type="ProductCarouselComponent">
+						<persistence type="property" />
+						<description>Attribute that represents title of the tab.</description>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="NoChargePaymentInfo" extends="PaymentInfo"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.NoChargePaymentInfo">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="title">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="description">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="EmailBasedUserGroup" extends="UserGroup"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.EmailBasedUserGroup">
+				<description>Extending the UserGroup to add regex email patterns to automatically add users to groups.</description>
+				<attributes>
+					<attribute qualifier="emailPatterns" type="StringCollection">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOSpecialAccountPromotion" extends="ProductPromotion"
+				jaloclass="com.so.core.jalo.SOSpecialAccountPromotion" autocreate="true"
+				generate="true">
+				<attributes>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="AbstractPromotionConfiguration" abstract="true"
+				extends="GenericItem" autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.AbstractPromotionConfiguration">
+				<deployment table="PromotionConfiguration" typecode="32024" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property" />
+						<modifiers optional="false" />
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="precedence">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="discountLevel">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="PriceType" qualifier="discountLevelPriceType">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="discountLevelRX">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="PriceType" qualifier="discountLevelRXPriceType">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="CategoryQuantityLimitConfList"
+						qualifier="productLimitList">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true"
+							optional="true" partof="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="noChargeTitle">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="noChargeDescription">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="UserGroupPromotionConfiguration" extends="AbstractPromotionConfiguration"
+				autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.UserGroupPromotionConfiguration">
+				<attributes>
+					<attribute type="OrderFrequency" qualifier="orderFrequency">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="ExpirationPeriodType" qualifier="expirationPeriodType">
+						<persistence type="property"></persistence>
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="expirationPeriod">
+						<persistence type="property"></persistence>
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SpecialAccountPromotionConfiguration"
+				extends="AbstractPromotionConfiguration" autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.SpecialAccountPromotionConfiguration">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="promotionalUrlPath">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="OrderFrequency" qualifier="orderFrequency">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="AllowedList" qualifier="allowedList">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="true" />
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="fixedAddress">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="VoucherPromotionConfiguration" extends="AbstractPromotionConfiguration"
+				autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.VoucherPromotionConfiguration">
+				<attributes>
+					<attribute type="VoucherType" qualifier="voucherType">
+						<persistence type="property" />
+						<modifiers unique="true" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="CategoryQuantityLimitConf" extends="GenericItem"
+				autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.CategoryQuantityLimitConf">
+				<deployment table="CatQtdLimitConf" typecode="32027" />
+				<attributes>
+					<attribute type="Category" qualifier="category">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="productLimit">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="productDiscount">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="true" />
+					</attribute>
+					<attribute type="PriceType" qualifier="discountLevelPriceType">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOVoucherType" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.VoucherType">
+				<deployment table="VoucherType" typecode="32010" />
+				<attributes>
+					<attribute qualifier="voucherTypeId" type="java.lang.String">
+						<description>The Voucher type.</description>
+						<persistence type="property" />
+						<modifiers optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="HotColdConfiguration" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.HotColdConfiguration">
+				<deployment table="HotColdConfiguration" typecode="32023" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="hotFrom">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="hotUntil">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="coldFrom">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="coldUntil">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="LatitudeRangeCollection" qualifier="LatitudeRange">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOProductFeature" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOProductFeature">
+				<deployment table="SOProductFeature" typecode="32022" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property" />
+						<modifiers unique="true" optional="false" />
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="name">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="description">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="precedence">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PriceRow" autocreate="false" generate="false">
+				<description>Extending the PriceRow type from core with additional attributes.</description>
+				<attributes>
+					<attribute type="PriceType" qualifier="priceType">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PartnerMedia" extends="Media" generate="true"
+				autocreate="true" jaloclass="com.so.core.jalo.PartnerMedia">
+				<description>Item that represents partner image.</description>
+			</itemtype>
+
+			<itemtype code="ProductVideo" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.ProductVideo">
+				<deployment table="ProductVideo" typecode="32006" />
+				<attributes>
+					<attribute type="CatalogVersion" qualifier="catalogVersion">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="Product" qualifier="product">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="header">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="url">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Partner" extends="GenericItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Partner">
+				<deployment table="Partner" typecode="32007" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property"></persistence>
+						<modifiers unique="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="name">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="PartnerMedia" qualifier="image">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="url">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute qualifier="rxPartner" type="java.lang.Boolean"
+						generate="true">
+						<persistence type="property" />
+						<modifiers read="true" write="true" optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="ProductPartnerUrl" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.ProductPartnerUrl">
+				<deployment table="ProductPartnerUrl" typecode="32008" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="productCode"
+						autocreate="true">
+						<persistence type="property"></persistence>
+						<modifiers read="true" write="true" search="true"
+							optional="false" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="upc"
+						autocreate="true">
+						<persistence type="property"></persistence>
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+					</attribute>
+					<attribute type="java.math.BigDecimal" qualifier="price">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="onHand">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="url">
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Product" autocreate="false" generate="false">
+				<description>Extending the Product type from core with additional attributes.</description>
+				<attributes>
+
+					<!-- Start New Attributes For Solstice -->
+					<attribute type="java.lang.String" qualifier="aMeasurement">
+						<persistence type="property"></persistence>
+					</attribute>
+					
+					<attribute type="java.lang.String" qualifier="bMeasurement">
+						<persistence type="property"></persistence>
+						</attribute>
+					
+					<attribute type="java.lang.Boolean" qualifier="isAvailable">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+
+					<attribute type="java.lang.Boolean" qualifier="isSale">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+					
+					<attribute type="java.lang.String" qualifier="vtoSkuId"
+						autocreate="true">
+						<persistence type="property"></persistence>
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+					</attribute>
+					
+					<!-- Attributes For 3rd module cloned varaints-->
+					<attribute type="java.lang.Boolean" qualifier="isCloned">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+					
+					<attribute type="java.lang.Boolean" qualifier="isProductCloned">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+										
+					<!-- <attribute type="java.lang.Boolean" qualifier="isRx">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute> -->
+					
+					<attribute type="java.lang.Boolean" qualifier="isNewProduct">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute> 
+					
+					<attribute type="java.lang.String" qualifier="bridgeType">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="gender">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- <attribute type="java.lang.String" qualifier="rimType">
+						<persistence type="property"></persistence>
+					</attribute> -->
+
+					<attribute type="java.lang.String" qualifier="sunVista">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="frtSize">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="baseCurve">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="frameThickness">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="templeType">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.Boolean" qualifier="SearchableIfUnavailable">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+
+					<!-- END New Attributes For Solstice -->
+					<attribute type="java.lang.String" qualifier="metaTitle">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="metaKeywords">
+						<persistence type="property">
+						<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="bvSmartSeo">
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="metaDescription">
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="crossSalesSummary">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="colorFamily">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="lensVLT">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="lensDescription">
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lensCategory">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="lensMaterial">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="lensScale">
+						<persistence type="property"></persistence>
+					</attribute>
+					<!-- VIDEO -->
+					<attribute type="ProductVideoList" qualifier="videos">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- TECHNOLOGY -->
+					<attribute autocreate="true" qualifier="technology"
+						type="localized:java.lang.String">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+						<custom-properties>
+							<property name="hmcIndexField">
+								<value>"thefield"</value>
+							</property>
+						</custom-properties>
+					</attribute>
+
+					<!-- MOBILE TECHNOLOGY -->
+					<attribute autocreate="true" qualifier="mobileTechnology"
+						type="localized:java.lang.String">
+						<modifiers read="true" write="true" search="true"
+							optional="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+						<custom-properties>
+							<property name="hmcIndexField">
+								<value>"thefield"</value>
+							</property>
+						</custom-properties>
+					</attribute>
+					<attribute type="Product" qualifier="defaultLens">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="Product" qualifier="defaultFrame">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- replaced by facet relation -->
+					<!-- <attribute type="localized:java.lang.String" qualifier="fit"> <persistence 
+						type="property"></persistence> </attribute> -->
+					<attribute type="java.lang.String" qualifier="specialOfferMessage">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="frameMaterial">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="templeLength">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lensWidth">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lensHeight">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="noseBridge">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="frameSize">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="caseBag">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="eliteName">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- FEATURES -->
+					<attribute type="java.lang.String" qualifier="nosePadMaterial">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="templePadMaterial">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="templeTipDistance">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="localized:java.lang.String" qualifier="weight">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="certification">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="countryOfOrigin">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="upc">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="planCode">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="division">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="businessUnit">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="line">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="productClass">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="vendorRef">
+						<persistence type="property"></persistence>
+					</attribute>
+				<!-- 	<attribute type="java.lang.String" qualifier="hingeType">
+						<persistence type="property"></persistence>
+					</attribute> -->
+					<attribute type="java.lang.String" qualifier="rawPart">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="ProductType" qualifier="type">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.util.Date" qualifier="financeOk">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.util.Date" qualifier="canadianFinanceOk">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.util.Date" qualifier="closeOutDate">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.util.Date" qualifier="onlineUpdatedDate">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.util.Date" qualifier="launchDate">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="finish">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.Boolean" qualifier="canadianFlag">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="inline">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="b2bOnly">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="forElite">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("true")</defaultvalue>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="lensColor">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="color">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.Boolean" qualifier="oldProductFlag">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="year">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- P2PList -->
+					<!-- <attribute type="java.util.Collection" qualifier="productPartnertList"> -->
+					<!-- <persistence type="dynamic" attributeHandler="p2pListAttributeHandler"/> -->
+					<!-- <modifiers read="true" write="true" /> -->
+					<!-- </attribute> -->
+
+					<!-- FEATURES -->
+					<attribute type="java.lang.String" qualifier="material">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="strapMaterial">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="buckleLatchClickColor">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="bag">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="japanPartNumber">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="asiaUpc">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="dist">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="includedAccessories">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<attribute type="localized:java.lang.String" qualifier="rxLenses">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="rxCoatings">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="popularitysort">
+						<persistence type="property"></persistence>
+					</attribute>
+
+					<!-- Product Awards -->
+					<attribute type="localized:java.lang.String" qualifier="awards">
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>CLOB</value>
+							</columntype>
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+
+				</attributes>
+			</itemtype>
+
+
+			<itemtype code="SortableItem" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SortableItem">
+				<deployment table="SortableItem" typecode="32200" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property" />
+						<modifiers unique="true" search="true" optional="false" />
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="name">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="precedence">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<!-- sortable facets -->
+
+			<itemtype code="Size" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Size">
+			</itemtype>
+
+			<itemtype code="Fit" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Fit">
+			</itemtype>
+
+			<itemtype code="Family" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Family">
+			</itemtype>
+
+			<itemtype code="ColorFamily" extends="SortableItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.ColorFamily">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="imageCode">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Shape" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Shape">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="imageCode">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="LensTech" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.LensTech">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="infoUrl">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<!-- end sortable facets -->
+
+
+			<itemtype code="SmithopticsProduct" extends="Product"
+				autocreate="true" generate="true" abstract="true"
+				jaloclass="com.so.core.jalo.SmithopticsProduct">
+				<attributes>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SORXLens" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXLens">
+
+			</itemtype>
+
+			<itemtype code="SORXCoating" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXCoating">
+
+			</itemtype>
+
+			<itemtype code="SOSunglass" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOSunglass">
+				<attributes>
+					<attribute type="localized:java.lang.String" qualifier="dataspintype">
+						<persistence type="property"></persistence>
+					</attribute>
+					<!-- <attribute type="localized:java.lang.String" qualifier="audioMaterial"> 
+						<persistence type="property"></persistence> </attribute> -->
+					<attribute type="localized:java.lang.String" qualifier="audioMaterial">
+						<modifiers read="true" write="true" optional="true"
+							search="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				
+				</attributes>
+				
+			</itemtype>
+
+			<itemtype code="SOGoggle" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOGoggle">
+				<attributes>
+					<attribute type="localized:java.lang.String" qualifier="dataspintype">
+						<persistence type="property"></persistence>
+					</attribute>
+					<!-- <attribute type="localized:java.lang.String" qualifier="audioMaterial"> 
+						<persistence type="property"></persistence> </attribute> -->
+					<attribute type="localized:java.lang.String" qualifier="audioMaterial">
+						<modifiers read="true" write="true" optional="true"
+							search="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOHelmet" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOHelmet">
+				<attributes>
+					<attribute type="localized:java.lang.String" qualifier="dataspintype">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="audioMaterial">
+						<modifiers read="true" write="true" optional="true"
+							search="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOApparel" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOApparel">
+
+			</itemtype>
+
+			<itemtype code="SOAccessory" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOAccessory">
+
+			</itemtype>
+
+			<itemtype code="SORXFrame" extends="SmithopticsProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXFrame">
+				<attributes>
+					<attribute type="localized:java.lang.String" qualifier="dataspintype">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="audioMaterial">
+						<modifiers read="true" write="true" optional="true"
+							search="true" />
+						<persistence type="property">
+							<columntype database="oracle">
+								<value>varchar2(4000)</value>
+							</columntype>
+							<columntype database="mysql">
+								<value>text</value>
+							</columntype>
+							<columntype database="sqlserver">
+								<value>nvarchar(max)</value>
+							</columntype>
+							<columntype database="hsqldb">
+								<value>LONGVARCHAR</value>
+							</columntype>
+							<columntype>
+								<value>varchar</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="AdditionalItem" extends="Product"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.AdditionalItem">
+			</itemtype>
+
+			<itemtype code="SuncloudProduct" abstract="true" extends="Product"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SuncloudProduct">
+				<attributes>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SCSunglass" extends="SuncloudProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SCSunglass">
+
+			</itemtype>
+
+			<itemtype code="VariantProduct" autocreate="false" generate="false">
+				<description>Extending the VariantProduct type from core with additional attributes.</description>
+				<attributes>
+					<attribute qualifier="precedence" type="int">
+						<persistence type="property" />
+					</attribute>
+					<attribute type="VariantProductCatalogExclusionList"
+						qualifier="catalogExclusions">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SmithopticsVariantProduct" abstract="true"
+				extends="VariantProduct" autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.SmithopticsVariantProduct">
+
+			</itemtype>
+
+			<itemtype code="SORXLensVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXLensVariant">
+				<attributes>
+					<attribute type="java.lang.Boolean" qualifier="isBifocalProduct">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="sphereMax">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="sphereMin">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="cylinderMax">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="cylinderMin">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="addMax">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="addMin">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SORXCoatingVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXCoatingVariant">
+
+			</itemtype>
+
+			<itemtype code="SOSunglassVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOSunglassVariant">
+
+			</itemtype>
+
+			<itemtype code="SOGoggleVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOGoggleVariant">
+				<attributes>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOHelmetVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOHelmetVariant">
+
+			</itemtype>
+
+			<itemtype code="SOApparelVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOApparelVariant">
+
+			</itemtype>
+
+			<itemtype code="SOAccessoryVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOAccessoryVariant">
+
+			</itemtype>
+
+			<itemtype code="SORXFrameVariant" extends="SmithopticsVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SORXFrameVariant">
+				<attributes>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="AdditionalItemVariant" extends="VariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.AdditionalItemVariant">
+
+
+			</itemtype>
+
+			<itemtype code="SuncloudVariantProduct" abstract="true"
+				extends="VariantProduct" autocreate="true" generate="true"
+				jaloclass="com.so.core.jalo.SuncloudVariantProduct">
+
+			</itemtype>
+
+			<itemtype code="SCSunglassVariant" extends="SuncloudVariantProduct"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SCSunglassVariant">
+
+			</itemtype>
+
+			<itemtype code="Customer" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="Gender" qualifier="gender">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="contactPhone">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+
+					<attribute type="Prodeal" qualifier="prodeal">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="ProType" qualifier="proType">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proBranch">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proAgency">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+
+					<attribute type="java.lang.String" qualifier="proCategoryCode">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proCategory">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proPin">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proNSPMemberLevel">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proNSPCertificationLevel">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.util.Date" qualifier="proApplyDate">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="ProActive" qualifier="proActive">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.util.Date" qualifier="proApprovalDate">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proApprovedBy">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.util.Date" qualifier="proDeniedDate">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proDeniedBy">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="email">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proNotes">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<!-- <attribute autocreate="true" qualifier="giftCardPaymentInfo" type="GiftCardPaymentInfo">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="false" optional="true" partof="true" />
+					</attribute> -->
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SmithOpticsCustomer" extends="Customer"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SmithOpticsCustomer">
+				<!-- <deployment table="SmithOpticsCustomer" typecode="32001" /> -->
+			</itemtype>
+
+			<itemtype code="SuncloudOpticsCustomer" extends="Customer"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SuncloudOpticsCustomer">
+				<!-- <deployment table="SuncloudOpticsCustomer" typecode="32000" /> -->
+			</itemtype>
+
+			<itemtype code="Address" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="nameSuffix">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="addressId">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" unique="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Note" extends="GenericItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Note">
+				<deployment table="Note" typecode="32004" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="notes">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.util.Date" qualifier="noteDate">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Interest" extends="GenericItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Interest">
+				<deployment table="Interest" typecode="32003" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="interests">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.Integer" qualifier="primary">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Reminder" extends="GenericItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Reminder">
+				<deployment table="Reminder" typecode="32070" />
+				<attributes>
+					<attribute type="User" qualifier="user">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="firstName">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lastName">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="gender">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="company">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="country">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="email">
+						<persistence type="property"></persistence>
+						<modifiers unique="true" search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="productCode">
+						<persistence type="property"></persistence>
+						<modifiers unique="true" search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="phoneNumber">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="ReminderStatus" qualifier="status">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="ReminderType" qualifier="type">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="CMSSite" qualifier="site">
+						<persistence type="property"></persistence>
+					</attribute>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="ProApplication" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.ProApplication">
+				<deployment table="ProApplication" typecode="32020" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="firstName">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lastName">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="gender">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="company">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="country">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="email">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="proCategory">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="phoneNumber">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="fileName">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="ProApplicationMedia" qualifier="proofDocument">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="User" qualifier="user">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="ProApplicationStatus" qualifier="status">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="aprovalNotes">
+						<persistence type="property">
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="reviewedFlag">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+					<attribute type="CMSSite" qualifier="site">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+
+			</itemtype>
+
+			<itemtype code="ProApplicationMedia" extends="CatalogUnawareMedia"
+				generate="true" autocreate="true" jaloclass="com.so.core.jalo.ProApplicationMedia">
+				<description>Item that represents pro applicant document of proof.</description>
+			</itemtype>
+
+
+
+			<itemtype code="PartnerOrg" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.PartnerOrg">
+				<deployment table="PartnerOrg" typecode="32080" />
+				<attributes>
+					<attribute type="UserGroup" qualifier="userGroup">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="code">
+						<modifiers unique="true" read="true" write="true"
+							search="true" optional="false" />
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="name">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PartnerOrgMemberID" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.PartnerOrgMemberID">
+				<deployment table="PartnerOrgMemberID" typecode="32081" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="memberId">
+						<persistence type="property"></persistence>
+						<modifiers read="true" write="true" search="true"
+							optional="false" />
+					</attribute>
+					<attribute type="PartnerOrgIDStatus" qualifier="status">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PartnerOrgLocation" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.PartnerOrgLocation">
+				<deployment table="PartnerOrgLocation" typecode="32082" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="code">
+						<persistence type="property"></persistence>
+						<modifiers unique="true" read="true" write="true"
+							search="true" optional="false" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="name">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="resort">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="Address" qualifier="address">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PrescriptionMajors" extends="GenericItem"
+				generate="true" autocreate="true" jaloclass="com.so.core.jalo.PrescriptionMajors">
+				<deployment table="PrescriptionMajors" typecode="32028" />
+				<attributes>
+					<attribute type="java.lang.Double" qualifier="left">
+						<persistence type="property" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="right">
+						<persistence type="property" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="GiftCardPaymentInfo" extends="PaymentInfo"
+				jaloclass="de.hybris.platform.jalo.order.payment.PaymentInfo" autocreate="true" generate="false">
+				<attributes>
+					<attribute qualifier="number" autocreate="true"	type="java.lang.String">
+						<modifiers read="true" write="true" search="false" optional="false" />
+						<!-- <modifiers read="true" write="true" search="false" optional="false" encrypted="true" /> -->
+						<persistence type="property" />
+						<!-- <custom-properties>
+							<property name="hmcIndexField">
+								<value>"thefield"</value>
+							</property> 
+						</custom-properties> -->
+					</attribute>
+					<attribute autocreate="true" qualifier="redeemedAmount"	type="java.lang.Double" generate="true">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true" optional="true" />
+						<defaultvalue>Double.valueOf(0.0d)</defaultvalue>
+					</attribute>
+					<attribute autocreate="true" qualifier="availableAmount" type="java.lang.Double" generate="true">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true" optional="true" />
+						<defaultvalue>Double.valueOf(0.0d)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="giftProductMessage">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+			
+			<itemtype code="Cart" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="gcProductFriendsEmail">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+			      	<attribute type="java.lang.String" qualifier="gcProductFriendsName">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>			      	
+					<attribute type="java.lang.String" qualifier="gcProductFriendsLastName">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="giftProductMessage">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="AbstractOrder" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="AbstractPromotionConfiguration"
+						qualifier="currentPromotion">
+						<persistence type="property"></persistence>
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="true" />
+						<description>This value will be used to fix the problem with the cscockpit</description>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="voucherType">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="specialAccountSite">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="prodealCode">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="prodealEmail">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.util.Date" qualifier="shipDate">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.util.Date" qualifier="cancelDate">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="backOrderNumber">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="taxGeocode">
+						<persistence type="property"></persistence>
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="taxLocal">
+						<persistence type="property"></persistence>
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="taxCounty">
+						<persistence type="property"></persistence>
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="taxCity">
+						<persistence type="property"></persistence>
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="taxState">
+						<persistence type="property"></persistence>
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMajors" qualifier="sphere">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMajors" qualifier="cylinder">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMajors" qualifier="axis">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="pupilDistanceSingle">
+						<persistence type="property" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMajors" qualifier="pupilDistanceSeperate">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMajors" qualifier="bifocalADD">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="PrescriptionMedia" qualifier="prescriptionMedia">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="refererHeaderAttributes">
+						<persistence type="property">
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+
+					<attribute type="java.lang.Boolean" qualifier="avaTaxCalculated">
+						<persistence type="property" />
+						<description>To treck if order tax is calculated, in case order service is down</description>
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("true")</defaultvalue>
+					</attribute>
+					
+					<attribute qualifier="confirmationStatus" type="ConfirmationStatus" generate="true">
+						<persistence type="property"/>
+						<modifiers read="true" write="true" search="true" optional="true"/>
+					</attribute>
+					
+					<attribute autocreate="true" qualifier="giftCardPaymentInfo" type="GiftCardPaymentInfo">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="false" optional="true" partof="true" />
+					</attribute>
+					<attribute autocreate="true" qualifier="redeemedAmount"	type="java.lang.Double" generate="true">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true" optional="true" />
+						<defaultvalue>Double.valueOf(0.0d)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="isGiftCardAvailable">
+						<persistence type="property"></persistence>
+						<modifiers optional="false" />
+						<defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PaymentTransactionEntry" autocreate="false" generate="false">
+				<attributes>
+		      		<attribute type="java.lang.String" qualifier="authorizationCode">
+		      			<persistence type="property"/>
+		      		</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="CreditCardPaymentInfo" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="encryptedCCNumber">
+						<persistence type="property"/>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PrescriptionMedia" extends="CatalogUnawareMedia"
+				generate="true" autocreate="true" jaloclass="com.so.core.jalo.PrescriptionMedia">
+				<description>Item that represents prescription document.</description>
+			</itemtype>
+
+			<itemtype code="AbstractOrderEntry" autocreate="false"
+				generate="false">
+				<attributes>
+					<attribute type="java.lang.Double" qualifier="actualBasePrice">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Double" qualifier="actualTotalPrice">
+						<persistence type="property" />
+						<modifiers optional="true" />
+						<defaultvalue>Double.valueOf(0.0D)</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="Voucher" autocreate="false" generate="false">
+				<attributes>
+					<!-- <attribute type="java.util.Date" qualifier="useDate"> <persistence 
+						type="property"></persistence> </attribute> <attribute type="java.util.Date" 
+						qualifier="issuedDate"> <persistence type="property"></persistence> </attribute> 
+						<attribute type="java.util.Date" qualifier="expiredDate"> <persistence type="property"></persistence> 
+						</attribute> -->
+					<attribute type="VoucherType" qualifier="voucherType">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="promotionId">
+						<description>Holds the value of promotion Id which will be sent to tradeglobal during export</description>
+						<modifiers read="true" write="true" optional="false"/>
+						<persistence type="property"/>
+					</attribute>
+					<!-- <attribute type="java.lang.String" qualifier="prodeal"> <persistence 
+						type="property"></persistence> </attribute> <attribute type="java.lang.Integer" 
+						qualifier="contractComplete"> <persistence type="property"></persistence> 
+						</attribute> -->
+				</attributes>
+			</itemtype>
+
+			<itemtype code="CMSNavigationNode" autocreate="false"
+				generate="false">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="url">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="localized:Media" qualifier="linkMedia">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="LinkMediaList" qualifier="linkMediaList">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="CMSLinkComponent" autocreate="false"
+				generate="false">
+				<attributes>
+					<attribute type="localized:Media" qualifier="linkMedia">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="SOBannerComponent" autocreate="true"
+				generate="true" extends="BannerComponent">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="styleClass">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="CountrySelectorComponent" autocreate="true"
+				generate="true" extends="SimpleCMSComponent" jaloclass="com.so.core.jalo.CountrySelectorComponent">
+			</itemtype>
+
+			<itemtype code="SiteCountryFlag" autocreate="true" generate="true"
+				extends="GenericItem" jaloclass="com.so.core.jalo.SiteCountryFlag">
+				<deployment table="SiteCountryFlag" typecode="32000" />
+				<attributes>
+					<attribute type="java.lang.String" qualifier="uid">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="localized:Media" qualifier="flag">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="label">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="Country" qualifier="country">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="Language" qualifier="language">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="CMSSite" qualifier="site">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="url">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="externalLink">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+					<attribute type="java.lang.Boolean" qualifier="defaultSite">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="CategoryQuantityRestriction" extends="ProductCategoryRestriction"
+				jaloclass="com.so.core.jalo.CategoryQuantityRestriction" autocreate="true"
+				generate="true">
+				<attributes>
+					<attribute autocreate="true" qualifier="quantity" type="java.lang.Long">
+						<description>the quantity of products the given voucher is valid for.</description>
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="false"
+							initial="false" optional="false" />
+					</attribute>
+					<attribute autocreate="true" qualifier="unit" type="Unit">
+						<description>
+						the unit for the quantity of products the given voucher is valid for.
+					</description>
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="false"
+							initial="false" optional="false" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="Athlete" extends="Product" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Athlete">
+				<attributes>
+					<attribute type="RotatingImagesComponent" qualifier="rotatingBanner">
+						<persistence type="property"></persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="highlights">
+						<persistence type="property">
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+					<attribute type="localized:java.lang.String" qualifier="atheleteSummary">
+						<persistence type="property">
+							<columntype>
+								<value>HYBRIS.LONG_STRING</value>
+							</columntype>
+						</persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+
+
+			<itemtype code="AbstractPage" autocreate="false" generate="false">
+				<attributes>
+					<attribute type="java.lang.Boolean" qualifier="forElite">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="false" />
+						<defaultvalue>java.lang.Boolean.valueOf("true")</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="PointOfService" autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="dealerId" type="java.lang.String">
+						<description>Used as the dealerId for search results etc.</description>
+						<persistence type="property" />
+						<modifiers unique="true" />
+					</attribute>
+					<attribute qualifier="masterId" type="java.lang.String">
+						<description>Used as the display name for search results etc.</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="dealerWebsite" type="java.lang.String">
+						<description>Used as the display name for search results etc.</description>
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="precedence" type="int">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="visible" type="boolean">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="onlineOnly" type="boolean">
+						<persistence type="property" />
+						<modifiers unique="false" read="true" write="true"
+							search="true" optional="true" />
+					</attribute>
+				</attributes>
+				<indexes>
+					<index name="PointOfServiceDealerId" unique="true">
+						<key attribute="dealerId" />
+					</index>
+				</indexes>
+			</itemtype>
+
+
+			<itemtype code="DLCategory" extends="GenericItem"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.DLCategory">
+				<deployment table="DLCategory" typecode="32009" />
+				<attributes>
+					<attribute qualifier="categoryName" type="java.lang.String">
+						<persistence type="property" />
+						<modifiers read="true" write="true" search="true"
+							optional="false" unique="true" />
+					</attribute>
+					<attribute qualifier="forSuncloud" type="boolean">
+						<persistence type="property" />
+						<defaultvalue>java.lang.Boolean.valueOf("false")</defaultvalue>
+					</attribute>
+					<attribute qualifier="precedence" type="int">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+				<indexes>
+					<index name="DLCategoryName" unique="true">
+						<key attribute="categoryName" />
+					</index>
+				</indexes>
+			</itemtype>
+
+			<itemtype code="BazaarvoiceSmithopticsProductFeedCronJob"
+				jaloclass="com.so.core.jalo.BazaarvoiceSmithopticsProductFeedCronJob"
+				extends="CronJob" autocreate="true" generate="true">
+				<attributes>
+
+				</attributes>
+			</itemtype>
+
+			<itemtype code="BazaarvoiceSmithopticsProductFeedJob"
+				jaloclass="com.so.core.jalo.BazaarvoiceSmithopticsProductFeedJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="StockReminderCronJob" jaloclass="com.so.core.jalo.StockReminderCronJob"
+				extends="CronJob" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="StockReminderJob" jaloclass="com.so.core.jalo.StockReminderJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="PartnerCronJob" jaloclass="com.so.core.jalo.PartnerCronJob"
+				extends="CronJob" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="PartnerJob" jaloclass="com.so.core.jalo.PartnerJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="CartCronJob" jaloclass="com.so.core.jalo.CartCronJob"
+				extends="CronJob" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="CartJob" jaloclass="com.so.core.jalo.CartJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="SOReminderCleanUpCronJob" jaloclass="com.so.core.jalo.SOReminderCleanUpCronJob"
+				extends="CronJob" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="SOReminderCleanUpJob" jaloclass="com.so.core.jalo.SOReminderCleanUpJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="SmithopticsExportOrderReprocessingJob"
+				jaloclass="com.so.core.jalo.SmithopticsExportOrderReprocessingJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="DeleteFilesOlderThanCronJob"
+				jaloclass="com.so.core.jalo.DeleteFilesOlderThanCronJob" extends="CronJob"
+				autocreate="true" generate="true">
+				<attributes>
+					<attribute qualifier="dirPath" type="java.lang.String">
+						<persistence type="property" />
+					</attribute>
+					<attribute qualifier="days" type="java.lang.Integer">
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="DeleteFilesOlderThanJob" jaloclass="com.so.core.jalo.DeleteFilesOlderThanJob"
+				extends="Job" autocreate="true" generate="true">
+			</itemtype>
+
+			<itemtype code="SOCatalogVersionSyncJob" jaloclass="com.so.core.jalo.SOCatalogVersionSyncJob"
+				extends="CatalogVersionSyncJob" autocreate="true" generate="true">
+			</itemtype>
+			<itemtype code="ZoneDeliveryModeValue" extends="GenericItem"
+				jaloclass="de.hybris.platform.deliveryzone.jalo.ZoneDeliveryModeValue"
+				autocreate="false" generate="false">
+				<attributes>
+					<attribute qualifier="minQty" type="java.lang.Integer"
+						autocreate="true">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute qualifier="maxQty" type="java.lang.Integer"
+						autocreate="true">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="VoucherType" qualifier="voucherType"
+						autocreate="true">
+						<persistence type="property" />
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="ProApplicationProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.ProApplicationProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="bccEmail">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<itemtype code="ShareProductsProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.ShareProductsProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="username">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="recEmail">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="emailMsg">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="Product" qualifier="product">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+			
+			<itemtype code="EmailPopupProcess" autocreate="true" generate="true" jaloclass="com.so.core.jalo.EmailPopupProcess" extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="email">
+						<persistence type="property"/>
+						<modifiers optional="true"/>
+					</attribute>
+					<attribute type="java.lang.String" qualifier="voucherCode">
+						<persistence type="property"/>
+						<modifiers optional="true"/>
+					</attribute>
+					<!-- Added attribute for the For EndDate in Email -->
+					<attribute type="java.lang.String" qualifier="voucherEndDate">
+						<persistence type="property"/>
+						<modifiers optional="true"/>
+					</attribute>
+				</attributes>
+			</itemtype>
+			
+			<itemtype code="SolsticeContactUsProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.SolsticeContactUsProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="firstName">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="lastName">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="comment">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="contactUsEmail">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="phoneNumber">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="orderNumber">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="topicQuestions">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="StockReminderProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.StockReminderProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="username">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="recEmail">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="emailMsg">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+					<attribute type="Product" qualifier="product">
+						<persistence type="property"></persistence>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="ProfeedbackCategoryOptions" autocreate="true"
+				generate="true" jaloclass="so.com.core.jalo.CmsLinkCompList"
+				extends="SimpleCMSComponent">
+				<attributes>
+					<attribute type="CmsLinkCompList" qualifier="categoryLinks"
+						generate="true" autocreate="true">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+
+			<itemtype code="ProductBrand" extends="SortableItem"
+				jaloclass="com.so.core.jalo.ProductBrand" autocreate="true"
+				generate="true">
+				<deployment table="ProductBrand" typecode="32480" />
+				<attributes>
+					<attribute type="localized:Media" qualifier="logo">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+					</attribute>
+				</attributes>
+			</itemtype>
+			<!-- Created New item type  For Solstice facets-->
+			<itemtype code="Material" extends="SortableItem" autocreate="true" generate="true" jaloclass="com.so.core.jalo.Material">
+    			<deployment table="Material" typecode="32481" />
+   			</itemtype>
+			<itemtype code="Polarization" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Polarization">
+				<deployment table="Polarization" typecode="32482" />
+			</itemtype>
+			<itemtype code="Rx" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.Rx">
+				<deployment table="Rx" typecode="32483" />
+			</itemtype>
+			<itemtype code="ProductRimType" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.ProductRimType">
+				<deployment table="ProductRimType" typecode="32487" />
+			</itemtype>
+		   	<itemtype code="HingeType" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.HingeType">
+				<deployment table="HingeType" typecode="32485" />
+			</itemtype>
+		   	<itemtype code="NewArrival" extends="SortableItem" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.NewArrival">
+				<deployment table="NewArrival" typecode="32486" />
+			</itemtype>
+		   	
+		   	<itemtype code="SolsticeOrderShippedMailProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.SolsticeOrderShippedMailProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="customerEmailId">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="orderShippedTrackingValue">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+				</attributes>		
+			</itemtype>
+			
+			<itemtype code="SolsticeOrderCancelMailProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.SolsticeOrderCancelMailProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="customerEmailIdForCancel">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+					<attribute type="java.lang.String" qualifier="orderCodeNumber">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+				</attributes>
+						
+			</itemtype> 
+			<itemtype code="SolsticeOrderReturnedMailProcess" autocreate="true"
+				generate="true" jaloclass="com.so.core.jalo.SolsticeOrderReturnedMailProcess"
+				extends="StoreFrontCustomerProcess">
+				<attributes>
+					<attribute type="java.lang.String" qualifier="customerEmailIdForReturned">
+						<modifiers read="true" write="true" optional="true"
+							search="false" />
+						<persistence type="property" />
+					</attribute>
+				</attributes>		
+			</itemtype>
+			<itemtype code="SOSunglassGiftCardVariant" extends="SOSunglassVariant"
+				autocreate="true" generate="true" jaloclass="com.so.core.jalo.SOSunglassGiftCardVariant">
+				<attributes>
+					<attribute type="java.lang.Boolean" qualifier="isEGiftProduct">
+						<persistence type="property"></persistence>
+						<modifiers optional="true" />
+						<defaultvalue>java.lang.Boolean.valueOf("true")</defaultvalue>
+					</attribute>
+				</attributes>
+			</itemtype>
+
+	<itemtype code="GiftCardEmailProcess" autocreate="true"
+		generate="true" jaloclass="com.so.core.jalo.GiftCardEmailProcess"
+		extends="StoreFrontCustomerProcess">
+		<attributes>
+			<attribute type="java.lang.String" qualifier="friendsEmail">
+				<persistence type="property" />
+				<modifiers optional="true" />
+			</attribute>
+			<attribute type="java.lang.String" qualifier="customerName">
+				<persistence type="property" />
+				<modifiers optional="true" />
+			</attribute>
+			<attribute type="java.lang.String" qualifier="giftCardNumber">
+				<persistence type="property" />
+				<modifiers optional="true" />
+			</attribute>
+			<attribute type="java.lang.String" qualifier="giftCardMessage">
+				<persistence type="property" />
+				<modifiers optional="true" />
+			</attribute>
+			<attribute type="java.lang.String" qualifier="giftCardAmount">
+				<persistence type="property" />
+				<modifiers optional="true" />
+			</attribute>
+		</attributes>
+	</itemtype>
+			
+	<itemtype code="Media" autocreate="false" generate="false">
+		<attributes>
+		<attribute type="java.lang.String" qualifier="externalUrl">
+			<persistence type="property"></persistence>
+			<modifiers optional="true" />
+		</attribute>
+		</attributes>
+	</itemtype>	
+	
+	<itemtype code="AbstractPromotion" autocreate="false" generate="false">
+	<attributes>
+		<attribute type="java.lang.String" qualifier="promotionId">
+			<description>Holds the value of promotion Id which will be sent to tradeglobal during export</description>
+				<modifiers read="true" write="true" optional="false"/>
+				<persistence type="property"/>
+		</attribute>
+	</attributes>
+	</itemtype>
+	
+	<itemtype code="MarketingEmail" autocreate="true" generate="true" extends="GenericItem" jaloclass="com.so.core.jalo.MarketingEmail">
+		<deployment table="MarketingEmail" typecode="32090" />
+		<attributes>
+			<attribute type="java.lang.String" qualifier="email">
+				<modifiers read="true" write="true" optional="false" unique="true"/>
+				<persistence type="property" />
+			</attribute>
+		</attributes>		
+	</itemtype>
+			
+		</typegroup>
+		
+	</itemtypes>
+</items>
