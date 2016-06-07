@@ -1,0 +1,1334 @@
+
+######################### Import the CMS content for LoginPage for smithoptics site  ###########################
+$contentCatalog=solsticeContentCatalog
+$productCatalog=solsticeProductCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+# Macros / Replacement Parameter definitions
+$picture=media(code, $contentCV);
+$siteResource=jar:com.so.initialdata.setup.InitialDataSystemSetup&/smithopticsinitialdata/import/contentCatalogs/solsticeContentCatalog
+
+$lang=en
+
+# Import config properties into impex macros
+UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
+ 
+# Load the storefront context root config param
+$storefrontContextRoot=
+########################################################################
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
+;;ShippingReturnsLink;Shipping & Returns;
+;;WarrantyInformationLink;Warranty Information;
+;;FAQLink;FAQ;
+;;ConformityCertificatesLink;Conformity Certificates;
+;;PrivacyPolicyLink;Privacy Policy;
+;;ContactUsLink;Contact Us;
+
+###################################### END #######################################################################
+
+# Paragraph Component for Promotion
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;content[lang=$lang]
+;;promotions;Promotions;promotions;"<div class='promotionsPage'>
+	<h2><span>Promotions</span></h2>
+	<div class='promotionsPageDiv'>
+	<!--<img width='1218' style='margin-bottom: 10px;' src='/_ui/desktop/solstice/images/Solstice_Memorial.jpg'>-->
+		<div class='promotionsPageDetails'>
+			<div class='promotions_box'><a href='/'>
+				<img src='/_ui/desktop/solstice/images/promo3.jpg'></a>
+			</div>
+			
+			<div class='promotions_info'>
+			<h3>Join our mailing list <a href='#'>SHARE</a></h3>
+				<div class='promotions_info_div'>
+					<p class='promotions_info_text'>Subscribe for the latest style, offers and news! Sign up to receive a 20% off Promo code in your inbox.</p>
+					<a href='/' class='shop_now'>SHOP NOW</a>
+					<div class='collaps_div'>
+						<h4 class='collaps_click'>info/exclusions</h4>
+						<div class='collaps_show_hide'>
+							“*Sign up for our newsletter below and receive 20% off your next online order. Must be a new email subscriber. May not be combined with other offers. Excludes Sale items and the following brands: Costa del Mar, Dior, Dior Homme, Givenchy, Maui Jim, Oakley, Oliver Peoples and Tom Ford.
+						</div>
+					</div>
+					<a href='/' class='shop_now'>SHOP NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>"
+
+;;customerService;customer Service;customerService;"<div class='twelve columns omega row'>
+	<h2>Customer Service</h2>
+	<div class='customerServiceDiv'>
+		<p>If you can't find the answer to your question call us 1-866-280-7620</p>
+		<!--<p>*Please note the call center will be closed starting at 5pm EST on Monday December 24th and will reopen at 7am EST Wednesday December 26th.</p>-->
+		<div class='customerservice_directory'>
+			<div class='customerservicesection'>
+				<p><strong>Contact Us</strong></p>
+				<ul>
+					<li><a title='contactus_redirect' href='solsticeContactUs'>Email Us</a></li>
+					<li><a title='faqs' href='faqs'>Frequently Asked Questions</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>My Account</strong></p>
+				<ul>
+					<li><a title='managing-account' href='managing-account'>Managing An Account</a></li>
+					<li><a title='opening-account' href='opening-account'>Opening An Account</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>Shipping</strong></p>
+				<ul>
+					<li><a title='shipping-methods' href='shipping-methods'>Shipping Methods</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>Ordering</strong></p>
+				<ul>
+					<li><a title='checkout' href='checkoutinfo'>Checkout</a></li>
+					<li><a title='ordering-canceling' href='ordering-canceling'>Changing or Canceling an Order</a></li>
+					<li><a title='payment' href='payment-methods'>Valid Payment Methods</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>Returns</strong></p>
+				<ul>
+					<li><a title='returns' href='info'>Information About Returns</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>Terms &amp; Conditions</strong></p>
+				<ul>
+					<li><a title='terms' href='terms'>Terms &amp; Conditions of Sale</a></li>
+				</ul>
+			</div>
+		
+			<div class='customerservicesection'>
+				<p><strong>Privacy &amp; Security</strong></p>
+				<ul>
+					<li><a title='privacy-policy' href='privacy-policy'>Privacy Policy</a></li>
+					<li><a title='security-policy' href='security-policy'>Security Policy</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>"
+;;privacyPolicy;privacy policy;privacyPolicy;"<div class='twelve columns omega row'>
+				<h2>Privacy Policy</h2>
+				<p><strong>Privacy Statement<strong></p>
+
+
+<p>In this Website Privacy Statement ('Statement'), we, Solstice Sunglasses (hereinafter referred to as 'Solstice Sunglasses', 'we', 'us' or 'our'), describe what personal information we collect through those web pages at <a href='/'>solsticesunglasses.com</a> that we control and on which we display a direct link to this Statement (the 'Site') and how we collect and use such data.</p>
+
+
+<p><strong>Scope</strong></p>
+
+
+<p>This Statement covers only data collected through the Site. It does not apply to any other data including, without limitation, data that we collect through other web pages at <a href='/'>www.solsticesunglasses.com</a> or offline, or data that others collect on websites that are linked or linking to the Site.</p>
+
+
+<p>Types of Data Solstice Sunglasses Collects, Collection Methods, and Collection Purposes
+Through the Site, we receive and collect data that you actively submit as well as data that we passively track:</>
+
+<p><strong>Actively Submitted Data:</strong> When you purchase products through our Site, sign up for a newsletter, participate in promotions or otherwise actively send us data, you are providing, and we collect, data such as your name, email address(es), billing address(es), delivery address(es), telephone number(s), and credit card information. In each such instance, you will know what data we collect through the Site, because you actively submit it. We collect actively submitted data primarily for the purpose for which you originally sent us the data (for example, to sell and deliver products). We may also use this data internally as research data to improve our products and services, and for purposes of advertising, promoting, and informing you about products, services, initiatives, and events; you can opt out of receiving marketing emails as explained below.</p>
+
+
+<p><strong>Passively Tracked Data:</strong> When you visit the Site, we also passively track information on your computer and Internet connection, such as the IP address of your computer and/or Internet service provider, the date and time you access the Site, the Internet address of websites from which you link to our Site, the computer technology you are using and your movements and preferences on our Site. We use technology that many other websites employ, including, without limitation, cookies, to collect information such as the aforementioned. We may also use such cookies to collect information in connection with future visits from that Site, to recognize you as a previous visitor and to track your activity on the Site. You may set your browser to notify you when a cookie is sent or to refuse cookies altogether, but certain features of the Site might not work without cookies. We reserve our right to also use other technologies such as Internet tags, web beacons, and navigational data collection tools (log files, server logs, or click stream). We collect passively tracked data primarily for purposes of administering, protecting and improving our Site and our systems, to better understand the preferences of our Site visitors, to identify server problems, to compile aggregated statistics about Site usage, to help personalize your experience of our Site, and to personalize offers.<p>
+
+
+<p><strong>Combinations:</strong> We may combine passively tracked data with data that you actively submit so as to, for instance, provide better service to Site visitors, customize the Site based on your preferences, compile and analyze statistics and trends, to otherwise administer and improve the Site for your use, and to personalize offers (for example, combined information may allow us to recommend products to you based on what you have liked in the past).</p>
+
+
+<p><strong>Disclosure of Personal Information</strong></p>
+
+
+<p>We are not in the business of selling or renting your information to telemarketers. We do not share your personal information with others, except as follows:</p>
+
+    <p>We freely share your information with our corporate affiliates</p>
+
+     
+
+    <p>We also grant access to your information to affiliated and unaffiliated service providers and third parties that process or maintain data on our behalf, freight forwarders, carriers, and such individuals or companies that conduct, manage or otherwise handle our marketing and promotional campaigns. Such third parties are subject to strict confidentiality obligations and may access and use your information only in accordance with our instructions and not for their own purposes.</p>
+
+     
+
+  <p>  We may also share your information to respond to law enforcement requests, court orders or other legal process or if we believe that such disclosure is necessary to investigate, prevent or respond to illegal activities, fraud, physical threats to you or others or as otherwise required by any applicable law or regulation.</p>
+
+     
+
+   <p> Finally, we may share or transfer your information in connection with a prospective or actual sale, merger, transfer or other reorganization of all or parts of our business.</p>
+
+
+
+<p><strong>Access and Correction</strong></p>
+
+
+<p>Please keep your personally identifiable information, accurate, current, and complete by routinely updating your user profile or by contacting us as specified below.</p>
+
+
+<p><strong>Security</strong></p>
+
+
+<p>We take reasonable steps to protect personally identifiable information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. But, you should keep in mind that no Internet transmission is ever completely secure or error-free. In particular, e-mail sent to or from the Sites may not be secure.</p>
+
+
+<p><strong>Opt-Out, Communication Preferences</strong></p>
+
+
+<p>You may modify your communication preferences and/or opt-out from specific communications at any time by choosing the unsubscribed option in the e-mail.</p>
+
+
+<p><strong>Links to Other Web Sites</strong></p>
+
+
+<p>This Site contains links and references to other web pages to which this Privacy Statement does not apply. We encourage you to read the privacy statement or policy of every web page you visit.</p>
+
+
+<p><strong>Contact Us (regarding California Privacy Rights or other topics)<strong></p>
+
+
+<p>Please feel free to contact us with any comments, questions, complaints or suggestions you might have regarding the information practices described in this Statement as follows.</p>
+
+
+<p>California Civil Code Section 1798.83 permits Solstice Sunglasses customers who are California residents to request certain information regarding its disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+
+
+<p><strong>Technical Information</strong></p>
+
+<p>The Solstice Sunglasses Online Store has been optimized for a screen resolution of 1024 x 768 px. You will also need a recent version of a browser such as Internet Explorer, Mozilla, Firefox, Safari or Opera. To enjoy the full range of features offered by the Online Store, you will also need a recent version of the Flash Player plug-in (version 9 or higher).</p>
+
+</div>"
+;;freeShipping;Free Shipping;freeShipping;"<div class='shippingMethodsPage'>
+	<h1>Shipping And Returns</h1>
+	<div class='shippingMethodsLeft'>
+		<h2>Delivery Rates and Fees</h2>
+		<table class='deliveryRatesTable'>
+		    <tbody>
+		        <tr>
+		            <th>Method</th>
+		            <th>Estimated Delivery Time</th>
+		            <th>Shipping Fee</th>
+		        </tr>
+		        <tr>
+		            <th>Standard (ground)</th>
+		            <td>5 to 7 business days</td>
+		            <td>Free</td>
+		        </tr>
+		        <tr>
+		            <th>Express</th>
+		            <td>2 to 3 business days</td>
+		            <td>$8.90</td>
+		        </tr>
+		        <tr>
+		            <th>Next-Day</th>
+		            <td>Next business day*</td>
+		            <td>$17.90</td>
+		        </tr>
+		    </tbody>
+		</table>
+	</div>
+	<div class='shippingMethodsRight'>
+		<p class='ground_Map'><img src='/_ui/desktop/solstice/images/UPSMAP_newsite.png' alt='UPS Ground Map' /></p>
+	</div>
+	
+	<p>*A $10.00 shipping fee will be added to orders shipping to HI and AK.</p>
+	<p><a href='/'>Solsticesunglasses.com</a> uses UPS or USPS as delivery carriers.</p>
+	
+	<h2>Standard Shipment:</h2>
+	<p>Following credit card authorization and verification of information, you will receive your order within approximately five to seven business days (Monday through Friday, not including holidays).</p>
+	<p>Solsticesunglass.com offers free shipping on all standard ground shipping orders.</p>
+	
+	<h2>Express Shipment:</h2>
+	<p>Orders placed with express shipping Monday through Friday (excluding holidays) before 4:00 PM ET /1:00 PM PT will arrive within two business days, pending credit card authorization and verification. Orders placed with express shipping Monday through Friday after 4:00 PM ET /1:00 PM PT, or on weekends and holidays, will arrive within two to three business days. Express shipping to rural routes and remote locations typically arrives within three to four business days.</p>
+	
+	<h2>Next-Day Shipment:</h2>
+	<p>Orders placed with next day shipping Monday through Friday (excluding holidays) before 4:00 PM ET /1:00 PM PT will arrive within one business day, pending credit card authorization and verification. Orders placed with next day shipping Monday through Friday after 4:00 PM ET /1:00 PM PT, or on weekends and holidays, will arrive within two business days. Next day shipping to rural routes and remote locations typically arrives within two to three business days.</p>
+	
+	<h2>Ship-To-Locations</h2>
+	<p><a href='/'>Solsticesunglasses.com</a> ships to all 50 U.S. states, including Alaska and Hawaii. Our online store is proud to offer shipping to APO/FPO addresses. Unfortunately, at this time we do not offer express shipping services to APO/FPO and we do not ship internationally.</p>
+	
+	<h2>Order Status and Tracking</h2>
+	<p>Information regarding the status of your order will be sent to you via email. If you have not received an order confirmation email shortly after placing your order, please first check your email spam filter before calling <a href='/'>Solsticesunglasses.com</a> customer service. When your order ships from our warehouse, you will receive a shipping confirmation e-mail containing tracking information for your packages. If you've received your tracking information, please <a target='_blank' href='https://www.ups.com/content/us/en/index.jsx'>click here</a> to track your shipment.</p>
+	<p>If you do not receive your order within five to seven days, please contact <a href='/'>Solsticesunglasses.com</a> customer service by calling 1-866-280-7620 or by emailing <a href='mailto:customersupport@solsticesunglasses.com?Subject=Not receive order'>customersupport@solsticesunglasses.com</a></p>
+</div>
+	
+	
+<div class='twelve columns omega row'>
+				<h1>Information About Returns</h1>
+						
+<p><a href='/'>SOLSTICEsunglasses.com</a> will gladly accept any merchandise purchased from our on-line store. Merchandise can be returned within 90 days of delivery in its original, unused condition for a full refund. For your convenience, we've provided two different options.</p>
+
+<p><strong>In-Store</strong></p>
+
+<p>You may exchange an item at a SOLSTICE store for another item. If you would like to return an item you must bring your enclosed return document to the store and we will mail the item to our returns center to be processed. You will not get a credit at the store as your item must be processed at our website Return Center. Please have both a government issued ID and the original receipt available so we can process your exchange or return. Please allow 14 business days for receipt and processing of your returned merchandise. If the return is approved, a credit will be issued in the original form of payment only.</p>
+
+<p><strong>By Mail</strong></p>
+
+<p>If you would like to make a return by mail please follow the instructions on the back of your invoice or contact our customer service department at 1-866-280-7620 FREE or email <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a> to request a shipping label.  You are required to repack the merchandise in its original condition and include the return form.
+Please allow 14 business days for receipt and processing of your returned merchandise. If the return is approved, a credit will be issued in the original form of payment only. Store purchases cannot be returned by mail.
+If you receive an incorrect item or if the merchandise is damaged or defective, please contact the <a href='/'>SOLSTICEsunglasses.com</a> Customer Service Center immediately by calling 1-866-280-7620 FREE or by emailing <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+
+
+<p><strong>Exchanges</strong></p>
+
+ <p>Unfortunately <a href='/'>SOLSTICESunglasses.com</a> cannot offer exchanges. Should you require a different style, please return your original purchase and place a new order.  Please allow 14 business days for receipt and processing of your returned merchandise. If the return is approved, a credit will be issued in the original form of payment only. Store purchases cannot be returned by mail.</p>
+
+				
+	</div>	"
+
+	
+	
+	###########################################################################################
+	
+	
+;;giftCard;Gift Card;giftCard;"<div class='twelve columns omega row'>
+	<h2>Gift card</h2>
+	<div class='giftcertpurchase'>
+	<div class='giftcertcolumn'>
+		<div class='contentasset'>
+			<h2>Purchase a eGift Certificate</h2>
+			<p>Any purchase of eGift for
+					more than $200 will be placed on hold until voice verification with
+					the credit card holder.</p>
+			<p>eGift Certificates can be ordered in any amount starting at $5.00. They are sent via e-mail to any individual with a valid e-mail address. The recipient of a eGift Certificate will receive an e-mail with a eGift Certificate Code Redeemable Only at <a href='/'>solsticesunglasses.com</a>. The eGift Certificate code is activated after credit card approval via e-mail.
+			</p>
+		</div>
+
+		<div class='giftcertpurchaseform'>
+			<form action='' id='GiftCertificateForm' method='post'>
+				<div class='entry_fields'>
+					<label class='labeltext'>Your Name <span class='requiredindicator'>*</span> </label>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<label class='labeltext'>Friend's Name <span class='requiredindicator'>*</span> </label>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<label class='labeltext'>Friend's Email  <span class='requiredindicator'>*</span> </label>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<label class='labeltext'>Confirm Friend's Email <span class='requiredindicator'>*</span> </label>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<label class='labeltext'>Message (Optional)</label>
+					<textarea>
+					</textarea>
+				</div>
+				<div class='entry_fields'>
+					<label class='labeltext'>Gift Amount  <span class='requiredindicator'>*</span> </label>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<button id='AddToBasketButton' class='button-gold-large' type='button'><span>Add to Bag</span></button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class='giftcertcolumn'>
+		<h2>Already Have a eGift Certificate?</h2>
+		
+		<p>Here's how to redeem a eGift Certificate online. On the billing page, provide the card's XX-digit number code. You can also check the balance of your Gift Certificate online. Please enter your Gift Certificate number here:</p>
+		<div class='checkbalanceForm'>
+			<form action='' id='' method='post'>
+				<div class='entry_fields'>
+					<input type='text' class='textinput'>
+				</div>
+				<div class='entry_fields'>
+					<button id='' class='' type='button'>CHECK BALANCE</button>
+				</div>
+			</form>
+		</div>
+		<p><strong>Important Information About eGift Certificates</strong></p>
+		<div class='gift_certificates_info'>
+			<ul>
+				<li><span>You cannot purchase an eGift Certificate with another eGift Certificate.</span></li>
+				<li><span>You cannot return an eGift Certificate.</span></li>
+				<li><span>If the amount of your eGift Certificate(s) does NOT cover the total order amount, you will need to pay the remainder of the purchase with a valid credit card.</span></li>
+				<li><span>If the amount of your eGift Certificate(s) is for MORE than the total order amount, the balance will be stored with your <a href='/'>solsticesunglasses.com</a> account for your next purchase using the same eGift Certificate code.</span></li>
+				<li><span>If you have any additional questions, please contact our Customer Service team.</span></li>
+				<li><span>eGift Certificates are NOT Redeemable in Stores, non-transferable, non-refundable and are not redeemable for cash (except where required by state law).</span></li>
+				<li><span>We cannot replace lost or stolen eGift Certificates.</span></li>
+				<li><span>We do not charge sales tax when you buy an eGift Certificate because it is charged when the eGift. Certificate is used. State tax may be added to all orders shipped to addresses in the states indicated here.</span></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+</div>"
+
+
+##########################################################################################
+
+
+;;career;Career;career;"<div class='career_page'>
+	<h2><span>Careers</span></h2>
+	<div class='career_banner'>
+		<a target='_blank' href='https://careers-solsticesunglasses.icims.com'>
+			<img alt='' src='/_ui/desktop/solstice/images/careers_banner.jpg'>
+		</a>
+	</div>
+	<div class='career_top'>
+		<ul>
+			<li> Commitment </li>
+			<li> Sophistication </li>
+			<li> Discerning </li>
+			<li> Energetic </li>
+			<li> Expressive </li>
+		</ul>
+	</div>
+	<div class='career_page_div'>
+		<p>The growth of Solstice Sunglasses is due to the dedicated commitment of it's employees and by the continually focusin on improving our performance.<br />
+		Driven by Customer service, Solstice Sunglasses strives to meet the needs of every customer and takes the shopping experience to a new level.</p>
+	
+		<p>At Solstice, our philosphy is to promote from within. With that, and our growth, we continuously seek individuals for the following position: District Manager, Store manager, Co-Manager,, keyholder, Selling Specialist.</p>
+		
+		<p>If you embrace our values, enjoy providing service to customers and want to contribute your talents by becoming part of the Solstice Sunglass team, please see our employment opportunities to apply:</p>
+		
+		<a class='view_careers_link'  target='_blank' href='https://careers-solsticesunglasses.icims.com/jobs/intro?hashed=435773244&mobile=false&width=846&height=500&bga=true&needRedirect=false&jan1offset-300&jun1offset=240'>View Careers</a>
+	</div>
+	
+	<div class='career_video'>
+		<p><strong>Work at Solstice</strong></p>
+		<iframe width='640' height='360' frameborder='0' allowfullscreen='' src='http://www.youtube.com/embed/mbD_bDp6Jm8?feature=player_detailpage'></iframe>
+	</div>
+	<div class='career_page_div'>
+		<p><strong>Equal Opportunity Employer&nbsp;</strong></p>
+		<p>SOLSTICE is committed to the principles upon which equal employment laws are based. Employment decisions are based on qualifications, merit and competence and are made without regard to race, religious creed, color, national origin or ancestry, physical or mental disability, medical condition, marital status, domestic partnership, or civil union status, affectional or sexual orientation. This policy applies to all employees, applicants for employment and all aspects of the employment relationship including recruitment, hiring, promotion, transfer, discipline, training, compensation, benefits and any other employee programs.&nbsp;</p>
+		<p>An important element of our commitment is that all employees adhere to the practice and spirit of the law and report any perceived violations of this policy to management.</p>
+	</div>
+</div>"
+		
+###############################################################################################
+
+
+
+		
+;;siteMap;Site Map ;siteMap;"<div class='twelve columns omega row'>
+				<h2>Solstice Sunglass Boutique</h2>
+
+<br><strong>Women's</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sunglasses' href='/Sunglasses/Womens/Sunglasses/c/20100'><strong>Sunglasses</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='New Arrivals' href='/Sunglasses/Womens/Sunglasses/New-Arrivals/c/20101'>New Arrivals</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Womens/Sunglasses/Designer/c/20104'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Womens/Sunglasses/LifeStyle/c/20105'>Lifestyle and Sport</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sale' href='/Sunglasses/Womens/Sunglasses/Sale/c/20107'>Sale</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Womens/Brands/c/20300'><strong>Brands</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Brands' href='/Sunglasses/Womens/Brands/All-Brands/c/20301'>All Brands</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Featured Brands' href='/Sunglasses/Womens/Brands/Featured-Brands/c/20302'>Featured Brands</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Womens/Brands/Featured-Brands/Bobbi-Brown/c/20312'>Bobbi Brown</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Womens/Brands/Featured-Brands/Hugo-Boss/c/20322'>Boss</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Womens/Brands/Featured-Brands/Carrera/c/20314'>Carrera</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Womens/Brands/Featured-Brands/Costa-del-Mar/c/20315'>Costa Del Mar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Womens/Brands/Featured-Brands/Dior/c/20316'>Dior</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Homme' href='/Sunglasses/Womens/Brands/Featured-Brands/Dior-Homme/c/20317'>Dior Homme</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Womens/Brands/Featured-Brands/Fendi/c/20318'>Fendi</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Womens/Brands/Featured-Brands/Fossil/c/20319'>Fossil</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Womens/Brands/Featured-Brands/Givenchy/c/20347'>Givenchy</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Womens/Brands/Featured-Brands/Gucci/c/20320'>Gucci</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Womens/Brands/Featured-Brands/Guess/c/20321'>Guess</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Womens/Brands/Featured-Brands/Jimmy-Choo/c/20324'>Jimmy Choo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Womens/Brands/Featured-Brands/Kate-Spade-New-York/c/20325'>Kate Spade New York</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Womens/Brands/Featured-Brands/Marc-by-Marc-Jacobs/c/20326'>Marc by Marc Jacobs</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Womens/Brands/Featured-Brands/Marc-Jacobs/c/20327'>Marc Jacobs</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Womens/Brands/Featured-Brands/Marc-Newson/c/20328'>Marc Newson</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Womens/Brands/Featured-Brands/Marcel-Wanders/c/20348'>Marcel-Wanders</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Womens/Brands/Featured-Brands/Maui-Jim/c/20329'>Maui Jim</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Womens/Brands/Featured-Brands/Max-Mara/c/20330'>Max Mara</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Womens/Brands/Featured-Brands/Miu-Miu/c/20349'>Miu-Miu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Womens/Brands/Featured-Brands/Oakley/c/20332'>Oakley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Womens/Brands/Featured-Brands/Oliver-Peoples/c/20333'>Oliver Peoples</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Womens/Brands/Featured-Brands/Oxydo/c/20334'>Oxydo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Womens/Brands/Featured-Brands/Persol/c/20335'>Persol</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Womens/Brands/Featured-Brands/Polaroid/c/20336'>Polaroid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Womens/Brands/Featured-Brands/Polaroid-Kids/c/20337'>Polaroid Kids</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Womens/Brands/Featured-Brands/Prada/c/20338'>Prada</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Womens/Brands/Featured-Brands/Prada-Linea-Rossa/c/20339'>Prada Linea Rossa</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Womens/Brands/Featured-Brands/Ray-Ban/c/20340'>Ray-Ban</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Womens/Brands/Featured-Brands/Smith-Optics/c/20343'>Smith Optics</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Womens/Brands/Featured-Brands/Swatch/c/20350'>Swatch</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Womens/Brands/Featured-Brands/Tom-Ford/c/20344'>Tom Ford</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Womens/Brands/Featured-Brands/Tommy-Hilfiger/c/20345'>Tommy Hilfiger</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Womens/Brands/Featured-Brands/Zegna/c/20351'>Zegna</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Womens/Brands/Featured-Brands/7-For-All-Mankind/c/20346'>7 For All Mankind</a>
+
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shape' href='/Sunglasses/Womens/Shape/c/20200'><strong>Shape</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Aviator' href='/Sunglasses/Womens/Shape/Aviator/c/20201'>Aviator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Cat Eye' href='/Sunglasses/Womens/Shape/Cat-Eye/c/20202'>Cat Eye</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Navigator' href='/Sunglasses/Womens/Shape/Navigator/c/20203'>Navigator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oval' href='/Sunglasses/Womens/Shape/Oval/c/20204'>Oval</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rectangle' href='/Sunglasses/Womens/Shape/Rectangle/c/20205'>Rectangle</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rimless' href='/Sunglasses/Womens/Shape/Rimless/c/20206'>Rimless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Womens/Shape/Round/c/20207'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shield' href='/Sunglasses/Womens/Shape/Shield/c/20208'>Shield</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wayfarer' href='/Sunglasses/Womens/Shape/Wayfarer/c/20210'>Wayfarer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wrap' href='/Sunglasses/Womens/Shape/Wrap/c/20211'>Wrap</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Trend' href='/Sunglasses/Womens/Trends/c/20500'><strong>Trend</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Womens/Trends/Round/c/20501'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Detailed' href='/Sunglasses/Womens/Trends/Detailed/c/20502'>Detailed</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Embellished' href='/Sunglasses/Womens/Trends/Embellished/c/20503'>Embellished</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Optical' href='/Sunglasses/Womens/Optical/c/20400'><strong>Optical</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='New Arrivals' href='/Sunglasses/Womens/Optical/New-Arrivals/c/20401'>New Arrivals</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Womens/Optical/Designer/c/20404'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Womens/Optical/LifeStyle/c/20405'>Lifestyle and Sport</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sale' href='/Sunglasses/Womens/Optical/Sale/c/20407'>Sale</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polarized' href='/Sunglasses/Womens/Polarized/c/20600'><strong>Polarized</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Polarized Lenses' href='/Sunglasses/Womens/Polarized/All-Polarized/c/20601'>All Polarized Lenses</a>
+
+<br>	<strong>Men's</strong>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	Father's Day Shop Sunglasses -->	
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sunglasses' href='/Sunglasses/Mens/Sunglasses/c/10100'><strong>Sunglasses</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='NewArrivals' href='/Sunglasses/Mens/Sunglasses/New-Arrivals/c/10101'>NewArrivals</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Mens/Sunglasses/Designer/c/10104'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Mens/Sunglasses/LifeStyle/c/10105'>Lifestyle and Sport</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sale' href='/Sunglasses/Mens/Sunglasses/Sale/c/10107'>Sale</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Mens/Brands/c/10300'><strong>Brands</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Brands' href='/Sunglasses/Mens/Brands/All-Brands/c/10301'>All Brands</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Featured Brands' href='/Sunglasses/Mens/Brands/Featured-Brands/c/10302'>Featured Brands</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Mens/Brands/Featured-Brands/Bobbi-Brown/c/10312'>Bobbi Brown</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Mens/Brands/Featured-Brands/Hugo-Boss/c/10322'>Boss</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Mens/Brands/Featured-Brands/Carrera/c/10314'>Carrera</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Mens/Brands/Featured-Brands/Costa-del-Mar/c/10315'>Costa Del Mar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Mens/Brands/Featured-Brands/Dior/c/10316'>Dior</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Homme' href='/Sunglasses/Mens/Brands/Featured-Brands/Dior-Homme/c/10317'>Dior Homme</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Mens/Brands/Featured-Brands/Fendi/c/10318'>Fendi</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Mens/Brands/Featured-Brands/Fossil/c/10319'>Fossil</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Mens/Brands/Featured-Brands/Givenchy/c/10347'>Givenchy</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Mens/Brands/Featured-Brands/Gucci/c/10320'>Gucci</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Mens/Brands/Featured-Brands/Guess/c/10321'>Guess</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Mens/Brands/Featured-Brands/Jimmy-Choo/c/10324'>Jimmy Choo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Mens/Brands/Featured-Brands/Kate-Spade-New-York/c/10325'>Kate Spade New York</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Mens/Brands/Featured-Brands/Marc-by-Marc-Jacobs/c/10326'>Marc by Marc Jacobs</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Mens/Brands/Featured-Brands/Marc-Jacobs/c/10327'>Marc Jacobs</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Mens/Brands/Featured-Brands/Marc-Newson/c/10328'>Marc Newson</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Mens/Brands/Featured-Brands/Marcel-Wanders/c/10348'>Marcel-Wanders</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Mens/Brands/Featured-Brands/Maui-Jim/c/10329'>Maui Jim</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Mens/Brands/Featured-Brands/Max-Mara/c/10330'>Max Mara</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Mens/Brands/Featured-Brands/Miu-Miu/c/10349'>Miu-Miu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Mens/Brands/Featured-Brands/Oakley/c/10332'>Oakley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Mens/Brands/Featured-Brands/Oliver-Peoples/c/10333'>Oliver Peoples</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Mens/Brands/Featured-Brands/Oxydo/c/10334'>Oxydo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Mens/Brands/Featured-Brands/Persol/c/10335'>Persol</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Mens/Brands/Featured-Brands/Polaroid/c/10336'>Polaroid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Mens/Brands/Featured-Brands/Polaroid-Kids/c/10337'>Polaroid Kids</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Mens/Brands/Featured-Brands/Prada/c/10338'>Prada</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Mens/Brands/Featured-Brands/Prada-Linea-Rossa/c/10339'>Prada Linea Rossa</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Mens/Brands/Featured-Brands/Ray-Ban/c/10340'>Ray-Ban</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Mens/Brands/Featured-Brands/Smith-Optics/c/10343'>Smith Optics</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Mens/Brands/Featured-Brands/Swatch/c/10350'>Swatch</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Mens/Brands/Featured-Brands/Tom-Ford/c/10344'>Tom Ford</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Mens/Brands/Featured-Brands/Tommy-Hilfiger/c/10345'>Tommy Hilfiger</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Mens/Brands/Featured-Brands/Zegna/c/10351'>Zegna</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Mens/Brands/Featured-Brands/7-For-All-Mankind/c/10346'>7 For All Mankind</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shape' href='/Sunglasses/Mens/Shape/c/10200'><strong>Shape</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Aviator' href='/Sunglasses/Mens/Shape/Aviator/c/10201'>Aviator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Navigator' href='/Sunglasses/Mens/Shape/Navigator/c/10203'>Navigator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oval' href='/Sunglasses/Mens/Shape/Oval/c/10204'>Oval</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rectangle' href='/Sunglasses/Mens/Shape/Rectangle/c/10205'>Rectangle</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rimless' href='/Sunglasses/Mens/Shape/Rimless/c/10206'>Rimless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Mens/Shape/Round/c/10207'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shield' href='/Sunglasses/Mens/Shape/Shield/c/10208'>Shield</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wayfarer' href='/Sunglasses/Mens/Shape/Wayfarer/c/10210'>Wayfarer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wrap' href='/Sunglasses/Mens/Shape/Wrap/c/10211'>Wrap</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Performance' href='/Sunglasses/Mens/Performance/c/10500'><strong>Performance</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Cycling' href='/Sunglasses/Mens/Performance/Cycling/c/10501'>Cycling</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fishing' href='/Sunglasses/Mens/Performance/Fishing/c/10502'>Fishing</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Running' href='/Sunglasses/Mens/Performance/Running/c/10503'>Running</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polarized' href='/Sunglasses/Mens/Polarized/c/10600'><strong>Polarized</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Polarized Lenses' href='/Sunglasses/Mens/Polarized/All-Polarized/c/10601'>All Polarized Lenses</a>
+
+<br>	<strong>Kids</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sunglasses' href='/Sunglasses/Kids/Sunglasses/c/30100'><strong>Sunglasses</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='New Arrivals' href='/Sunglasses/Kids/Sunglasses/New-Arrivals/c/30101'>New Arrivals</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sale' href='/Sunglasses/Kids/Sunglasses/Sale/c/30102'>Sale</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Kids/Brands/c/30300'><strong>Brands</strong></a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Kids/Brands/Select-Brand/Bobbi-Brown/c/30312'>Bobbi Brown</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Kids/Brands/Select-Brand/Hugo-Boss/c/30322'>Boss</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Kids/Brands/Select-Brand/Carrera/c/30314'>Carrera</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Kids/Brands/Select-Brand/Costa-del-Mar/c/30315'>Costa Del Mar</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Kids/Brands/Select-Brand/Dior/c/30316'>Dior</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Homme' href='/Sunglasses/Kids/Brands/Select-Brand/Dior-Homme/c/30317'>Dior Homme</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Kids/Brands/Select-Brand/Fendi/c/30318'>Fendi</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Kids/Brands/Select-Brand/Fossil/c/30319'>Fossil</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Kids/Brands/Select-Brand/Givenchy/c/30347'>Givenchy</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Kids/Brands/Select-Brand/Gucci/c/30320'>Gucci</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Kids/Brands/Select-Brand/Guess/c/30321'>Guess</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Kids/Brands/Select-Brand/Jimmy-Choo/c/30324'>Jimmy Choo</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Kids/Brands/Select-Brand/Kate-Spade-New-York/c/30325'>Kate Spade New York</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Kids/Brands/Select-Brand/Marc-by-Marc-Jacobs/c/30326'>Marc by Marc Jacobs</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Kids/Brands/Select-Brand/Marc-Jacobs/c/30327'>Marc Jacobs</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Kids/Brands/Select-Brand/Marc-Newson/c/30328'>Marc Newson</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Kids/Brands/Select-Brand/Marcel-Wanders/c/30348'>Marcel-Wanders</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Kids/Brands/Select-Brand/Maui-Jim/c/30329'>Maui Jim</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Kids/Brands/Select-Brand/Max-Mara/c/30330'>Max Mara</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Kids/Brands/Select-Brand/Miu-Miu/c/30349'>Miu-Miu</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Kids/Brands/Select-Brand/Oakley/c/30332'>Oakley</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Kids/Brands/Select-Brand/Oliver-Peoples/c/30333'>Oliver Peoples</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Kids/Brands/Select-Brand/Oxydo/c/30334'>Oxydo</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Kids/Brands/Select-Brand/Persol/c/30335'>Persol</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Kids/Brands/Select-Brand/Polaroid/c/30336'>Polaroid</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Kids/Brands/Select-Brand/Polaroid-Kids/c/30337'>Polaroid Kids</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Kids/Brands/Select-Brand/Prada/c/30338'>Prada</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Kids/Brands/Select-Brand/Prada-Linea-Rossa/c/30339'>Prada Linea Rossa</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Kids/Brands/Select-Brand/Ray-Ban/c/30340'>Ray-Ban</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Kids/Brands/Select-Brand/Smith-Optics/c/30343'>Smith Optics</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Kids/Brands/Select-Brand/Swatch/c/30350'>Swatch</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Kids/Brands/Select-Brand/Tom-Ford/c/30344'>Tom Ford</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Kids/Brands/Select-Brand/Tommy-Hilfiger/c/30345'>Tommy Hilfiger</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Kids/Brands/Select-Brand/Zegna/c/30351'>Zegna</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Kids/Brands/Select-Brand/7-For-All-Mankind/c/30346'>7 For All Mankind</a>-->
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp;  -	<a title='Age' href='/Sunglasses/Kids/Age/c/30400'><strong>Age</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Baby (Age 1-3)' href='/Sunglasses/Kids/Age/Baby%28Age-1-3%29/c/30401'>Baby (Age 1-3)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kids (Age 4-7)' href='/Sunglasses/Kids/Age/Kids%28Age-4-7%29/c/30402'>Kids (Age 4-7)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Children (Age 8-12)' href='/Sunglasses/Kids/Age/Children%28Age-8-12%29/c/30403'>Children (Age 8-12)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Teen (Age 13-15)' href='#'>Teen (Age 13-15)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polarized' href='/Sunglasses/Kids/Polarized/c/30500'><strong>Polarized</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Polarized' href='/Sunglasses/Kids/Polarized/All-Polarized/c/30501'>All Polarized</a>
+
+
+<br>	<strong>Brands</strong>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	Alexander McQueen Sunglasses	-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown Sunglasses' href='Sunglasses/Brands/Bobbi-Brown/c/40002'>Bobbi Brown Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss Orange Sunglasses' href='#'>Boss Orange Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bottega Veneta Sunglasses' href='#'>Bottega Veneta Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera Sunglasses' href='/Sunglasses/Brands/Carrera/c/40004'>Carrera Sunglasses</a>	
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera X-Cede Sunglasses' href='#'>Carrera X-Cede Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar Sunglasses' href='Sunglasses/Brands/Costa-del-Mar/c/40005'>Costa Del Mar Sunglasses</a>	
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Sunglasses' href='/Sunglasses/Brands/Dior/c/40006'>Dior Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Homme Sunglasses' href='/Sunglasses/Brands/Dior-Homme/c/40007'>Dior Homme Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi Sunglasses' href='/Sunglasses/Brands/Fendi/c/40008'>Fendi Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil Sunglasses' href='/Sunglasses/Brands/Fossil/c/40009'>Fossil Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy Sunglasses' href='/Sunglasses/Brands/Givenchy/c/40037'>Givenchy Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci Sunglasses' href='/Sunglasses/Brands/Gucci/c/40010'>Gucci Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess Sunglasses' href='/Sunglasses/Brands/Guess/c/40011'>Guess Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss Sunglasses' href='/Sunglasses/Brands/Hugo-Boss/c/40012'>Boss Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jack Spade Sunglasses' href='#'>Jack Spade Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo Sunglasses' href='/Sunglasses/Brands/Jimmy-Choo/c/40014'>Jimmy Choo Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York Sunglasses' href='/Sunglasses/Brands/Kate-Spade-New-York/c/40015'>Kate Spade New York Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs Sunglasses' href='/Sunglasses/Brands/Marc-by-Marc-Jacobs/c/40016'>Marc by Marc Jacobs Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs Sunglasses' href='/Sunglasses/Brands/Marc-Jacobs/c/40017'>Marc Jacobs Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson Sunglasses' href='/Sunglasses/Brands/Marc-Newson/c/40018'>Marc Newson Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders Sunglasses' href='/Sunglasses/Brands/Marcel-Wanders/c/40038'>Marcel-Wanders Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim Sunglasses' href='/Sunglasses/Brands/Maui-Jim/c/40019'>Maui Jim Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim Readers Sunglasses' href='#'>Maui Jim Readers Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara Sunglasses' href='/Sunglasses/Brands/Max-Mara/c/40020'>Max Mara Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu Sunglasses' href='/Sunglasses/Brands/Miu-Miu/c/40039'>Miu-Miu Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='McQ Sunglasses' href='#'>McQ Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley Sunglasses' href='/Sunglasses/Brands/Oakley/c/40022'>Oakley Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples Sunglasses' href='/Sunglasses/Brands/Oliver-Peoples/c/40023'>Oliver Peoples Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo Sunglasses' href='/Sunglasses/Brands/Oxydo/c/40024'>Oxydo Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol Sunglasses' href='/Sunglasses/Brands/Persol/c/40025'>Persol Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Sunglasses' href='/Sunglasses/Brands/Polaroid/c/40026'>Polaroid Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids Sunglasses' href='/Sunglasses/Brands/Polaroid-Kids/c/40027'>Polaroid Kids Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid PLUS Sunglasses' href='#'>Polaroid PLUS Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Sunglasses' href='/Sunglasses/Brands/Prada/c/40028'>Prada Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa Sunglasses' href='/Sunglasses/Brands/Prada-Linea-Rossa/c/40029'>Prada Linea Rossa Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban Sunglasses' href='/Sunglasses/Brands/Ray-Ban/c/40030'>Ray-Ban Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban Tech Sunglasses' href='#'>Ray-Ban Tech Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Roberto Cavalli Sunglasses' href='#'>Roberto Cavalli Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Saint Laurent Paris Sunglasses' href='#'>Saint Laurent Paris Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics Sunglasses' href='/Sunglasses/Brands/Smith-Optics/c/40033'>Smith Optics Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch Sunglasses' href='/Sunglasses/Brands/Swatch/c/40040'>Swatch Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford Sunglasses' href='/Sunglasses/Brands/Tom-Ford/c/40034'>Tom Ford Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger Sunglasses' href='/Sunglasses/Brands/Tommy-Hilfiger/c/40035'>Tommy Hilfiger Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford Eyewear Sunglasses' href='#'>Tom Ford Eyewear Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna Sunglasses' href='/Sunglasses/Brands/Zegna/c/40041'>Zegna Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind Sunglasses' href='/Sunglasses/Brands/7-For-All-Mankind/c/40036'>7 For All Mankind Sunglasses</a>
+
+<br><strong>Shape</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Aviator Sunglasses' href='/Sunglasses/Shape/Aviator/c/50001'>Aviator Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Cateye Sunglasses' href='/Sunglasses/Shape/Cat-Eye/c/50002'>Cateye Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Clubmaster Sunglasses' href='#'>Clubmaster Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Foldable Sunglasses' href='#'>Foldable Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Geometric Sunglasses' href='#'>Geometric Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Navigator Sunglasses' href='/Sunglasses/Shape/Navigator/c/50003'>Navigator Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Optical Sunglasses' href='#'>Optical Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Oval Modified Sunglasses' href='#'>Oval Modified Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Oval Sunglasses' href='/Sunglasses/Shape/Oval/c/50004'>Oval Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Polarized Sunglasses' href='#'>Polarized Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Rectangle Sunglasses' href='/Sunglasses/Shape/Rectangle/c/50005'>Rectangle Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Rimless Sunglasses' href='/Sunglasses/Shape/Rimless/c/50006'>Rimless Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Round Sunglasses' href='/Sunglasses/Shape/Round/c/50007'>Round Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Shield Sunglasses' href='/Sunglasses/Shape/Shield/c/50008'>Shield Sunglasses</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Square Sunglasses' href='#'>Square Sunglasses</a>-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Tea Cup Sunglasses' href='#'>Tea Cup Sunglasses</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Wayfarer Sunglasses' href='/Sunglasses/Shape/Wayfarer/c/50010'>Wayfarer Sunglasses</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -		<a title='Wrap Sunglasses' href='/Sunglasses/Shape/Wrap/c/50011'>Wrap Sunglasses</a>
+
+ <!--<br><strong>Polarized Shop</strong>-->
+<br><strong>Optical </strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Opticals' href='/Sunglasses/Optical/Opticals/c/60100'><strong>Opticals</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='New Arrivals' href='/Sunglasses/Optical/Opticals/New-Arrivals/c/60101'>New Arrivals</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Optical/Opticals/Designer/c/60104'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Optical/Opticals/LifeStyle/c/60105'>Lifestyle and Sport</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sale' href='/Sunglasses/Optical/Opticals/Sale/c/60107'>Sale</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shape' href='/Sunglasses/Optical/Shape/c/60200'><strong>Shape</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Cat Eye' href='/Sunglasses/Optical/Shape/Cat-Eye/c/60202'>Cat Eye</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oval' href='/Sunglasses/Optical/Shape/Oval/c/60204'>Oval</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rectangle' href='/Sunglasses/Optical/Shape/Rectangle/c/60205'>Rectangle</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rimless' href='/Sunglasses/Optical/Shape/Rimless/c/60206'>Rimless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Optical/Shape/Round/c/60207'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wayfarer' href='/Sunglasses/Optical/Shape/Wayfarer/c/60210'>Wayfarer</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Optical/Brands/c/60300'><strong>Brands</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Brands' href='/Sunglasses/Optical/Brands/All-Brands/c/60301'>All Brands</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Featured Brands' href='/Sunglasses/Optical/Brands/Featured-Brands/c/60302'>Featured Brands</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Optical/Brands/Featured-Brands/Bobbi-Brown/c/60312'>Bobbi Brown</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Optical/Brands/Featured-Brands/Hugo-Boss/c/60322'>Boss</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Optical/Brands/Featured-Brands/Carrera/c/60314'>Carrera</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Optical/Brands/Featured-Brands/Costa-del-Mar/c/60315'>Costa Del Mar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Optical/Brands/Featured-Brands/Dior/c/60316'>Dior</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Optical/Brands/Featured-Brands/Dior-Homme/c/60317'>Dior Homme</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Optical/Brands/Featured-Brands/Fendi/c/60318'>Fendi</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Optical/Brands/Featured-Brands/Fossil/c/60319'>Fossil</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Optical/Brands/Featured-Brands/Givenchy/c/60347'>Givenchy</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Optical/Brands/Featured-Brands/Gucci/c/60320'>Gucci</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Optical/Brands/Featured-Brands/Guess/c/60321'>Guess</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Optical/Brands/Featured-Brands/Jimmy-Choo/c/60324'>Jimmy Choo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Optical/Brands/Featured-Brands/Kate-Spade-New-York/c/60325'>Kate Spade New York</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Optical/Brands/Featured-Brands/Marc-by-Marc-Jacobs/c/60326'>Marc by Marc Jacobs</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Optical/Brands/Featured-Brands/Marc-Jacobs/c/60327'>Marc Jacobs</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Optical/Brands/Featured-Brands/Marc-Newson/c/60328'>Marc Newson</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Optical/Brands/Featured-Brands/Marcel-Wanders/c/60348'>Marcel-Wanders</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Optical/Brands/Featured-Brands/Maui-Jim/c/60329'>Maui Jim</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Optical/Brands/Featured-Brands/Max-Mara/c/60330'>Max Mara</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Optical/Brands/Featured-Brands/Miu-Miu/c/60349'>Miu-Miu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Optical/Brands/Featured-Brands/Oakley/c/60332'>Oakley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Optical/Brands/Featured-Brands/Oliver-Peoples/c/60333'>Oliver Peoples</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Optical/Brands/Featured-Brands/Oxydo/c/60334'>Oxydo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Optical/Brands/Featured-Brands/Persol/c/60335'>Persol</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Optical/Brands/Featured-Brands/Polaroid/c/60336'>Polaroid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Optical/Brands/Featured-Brands/Polaroid-Kids/c/60337'>Polaroid Optical</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Optical/Brands/Featured-Brands/Prada/c/60338'>Prada</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Optical/Brands/Featured-Brands/Prada-Linea-Rossa/c/60339'>Prada Linea Rossa</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Optical/Brands/Featured-Brands/Ray-Ban/c/60340'>Ray-Ban</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Optical/Brands/Featured-Brands/Smith-Optics/c/60343'>Smith Optics</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Optical/Brands/Featured-Brands/Swatch/c/60350'>Swatch</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Optical/Brands/Featured-Brands/Tom-Ford/c/60344'>Tom Ford</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Optical/Brands/Featured-Brands/Tommy-Hilfiger/c/60345'>Tommy Hilfiger</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Optical/Brands/Featured-Brands/Zegna/c/60351'>Zegna</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Optical/Brands/Featured-Brands/7-For-All-Mankind/c/60346'>7 For All Mankind</a>
+
+<br><strong>What's New</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sunglasses' href='/Sunglasses/Whats-New/Sunglasses/c/70100'><strong>Sunglasses</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Whats-New/Sunglasses/Designer/c/70103'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Whats-New/Sunglasses/LifeStyle/c/70104'>Lifestyle and Sport</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shape' href='/Sunglasses/Whats-New/Shape/c/70300'><strong>Shape</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Aviator' href='/Sunglasses/Whats-New/Shape/Aviator/c/70301'>Aviator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Cat Eye' href='/Sunglasses/Whats-New/Shape/Cat-Eye/c/70302'>Cat Eye</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Navigator' href='/Sunglasses/Whats-New/Shape/Navigator/c/70303'>Navigator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oval' href='/Sunglasses/Whats-New/Shape/Oval/c/70304'>Oval</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rectangle' href='/Sunglasses/Whats-New/Shape/Rectangle/c/70305'>Rectangle</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rimless' href='/Sunglasses/Whats-New/Shape/Rimless/c/70306'>Rimless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Whats-New/Shape/Round/c/70307'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shield' href='/Sunglasses/Whats-New/Shape/Shield/c/70308'>Shield</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wayfarer' href='/Sunglasses/Whats-New/Shape/Wayfarer/c/70310'>Wayfarer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wrap' href='/Sunglasses/Whats-New/Shape/Wrap/c/70311'>Wrap</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Whats-New/Brands/c/70200'><strong>Brands</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Brands' href='/Sunglasses/Whats-New/Brands/All-Brands/c/70201'>All Brands</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Featured Brands' href='/Sunglasses/Whats-New/Brands/Featured-Brands/c/70202'>Featured Brands</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Bobbi-Brown/c/70212'>Bobbi Brown</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Hugo-Boss/c/70222'>Boss</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Carrera/c/70214'>Carrera</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Costa-del-Mar/c/70215'>Costa Del Mar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Dior/c/70216'>Dior</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Dior-Homme/c/70217'>Dior Homme</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Fendi/c/70218'>Fendi</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Fossil/c/70219'>Fossil</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Givenchy/c/70247'>Givenchy</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Gucci/c/70220'>Gucci</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Guess/c/70221'>Guess</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Jimmy-Choo/c/70224'>Jimmy Choo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Kate-Spade-New-York/c/70225'>Kate Spade New York</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Marc-by-Marc-Jacobs/c/70226'>Marc by Marc Jacobs</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Marc-Jacobs/c/70227'>Marc Jacobs</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Marc-Newson/c/70228'>Marc Newson</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Marcel-Wanders/c/70248'>Marcel-Wanders</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Maui-Jim/c/70229'>Maui Jim</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Max-Mara/c/70230'>Max Mara</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Miu-Miu/c/70249'>Miu-Miu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Oakley/c/70232'>Oakley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Oliver-Peoples/c/70233'>Oliver Peoples</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Oxydo/c/70234'>Oxydo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Persol/c/70235'>Persol</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Polaroid/c/70236'>Polaroid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Polaroid-Kids/c/70237'>Polaroid Kids</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Prada/c/70238'>Prada</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Prada-Linea-Rossa/c/70239'>Prada Linea Rossa</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Ray-Ban/c/70240'>Ray-Ban</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Smith-Optics/c/70243'>Smith Optics</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Swatch/c/70250'>Swatch</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Tom-Ford/c/70244'>Tom Ford</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Tommy-Hilfiger/c/70245'>Tommy Hilfiger</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Whats-New/Brands/Featured-Brands/Zegna/c/70251'>Zegna</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Whats-New/Brands/Featured-Brands/7-For-All-Mankind/c/70246'>7 For All Mankind</a>
+
+
+
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; - Best Sellers Sunglasses-->
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp; - Season's Trends Sunglasses-->
+
+<br><strong>Sale</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Sunglasses' href='/Sunglasses/Sale/Sunglasses/c/80100'><strong>Sunglasses</strong></a>	
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Designer' href='/Sunglasses/Sale/Sunglasses/Designer/c/80103'>Designer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Lifestyle and Sport' href='/Sunglasses/Sale/Sunglasses/LifeStyle/c/80104'>Lifestyle and Sport</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shape' href='/Sunglasses/Sale/Shape/c/80300'><strong>Shape</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Aviator' href='/Sunglasses/Sale/Shape/Aviator/c/80301'>Aviator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Cat Eye' href='/Sunglasses/Sale/Shape/Cat-Eye/c/80302'>Cat Eye</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Navigator' href='/Sunglasses/Sale/Shape/Navigator/c/80303'>Navigator</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oval' href='/Sunglasses/Sale/Shape/Oval/c/80304'>Oval</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rectangle' href='/Sunglasses/Sale/Shape/Rectangle/c/80305'>Rectangle</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Rimless' href='/Sunglasses/Sale/Shape/Rimless/c/80306'>Rimless</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Round' href='/Sunglasses/Sale/Shape/Round/c/80307'>Round</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Shield' href='/Sunglasses/Sale/Shape/Shield/c/80308'>Shield</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wayfarer' href='/Sunglasses/Sale/Shape/Wayfarer/c/80310'>Wayfarer</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Wrap' href='/Sunglasses/Sale/Shape/Wrap/c/80311'>Wrap</a>
+
+<br>&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Brands' href='/Sunglasses/Sale/Brands/c/80200'><strong>Brands</strong></a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='All Brands' href='/Sunglasses/Sale/Brands/All-Brands/c/80201'>All Brands</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Featured Brands' href='/Sunglasses/Sale/Brands/Featured-Brands/c/80202'>Featured Brands</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Bobbi Brown' href='/Sunglasses/Sale/Brands/Featured-Brands/Bobbi-Brown/c/80212'>Bobbi Brown</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Boss' href='/Sunglasses/Sale/Brands/Featured-Brands/Hugo-Boss/c/80222'>Boss</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Carrera' href='/Sunglasses/Sale/Brands/Featured-Brands/Carrera/c/80214'>Carrera</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Costa Del Mar' href='/Sunglasses/Sale/Brands/Featured-Brands/Costa-del-Mar/c/80215'>Costa Del Mar</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior' href='/Sunglasses/Sale/Brands/Featured-Brands/Dior/c/80216'>Dior</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Dior Homme' href='/Sunglasses/Sale/Brands/Featured-Brands/Dior-Homme/c/80217'>Dior Homme</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fendi' href='/Sunglasses/Sale/Brands/Featured-Brands/Fendi/c/80218'>Fendi</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Fossil' href='/Sunglasses/Sale/Brands/Featured-Brands/Fossil/c/80219'>Fossil</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Givenchy' href='/Sunglasses/Sale/Brands/Featured-Brands/Givenchy/c/80247'>Givenchy</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Gucci' href='/Sunglasses/Sale/Brands/Featured-Brands/Gucci/c/80220'>Gucci</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Guess' href='/Sunglasses/Sale/Brands/Featured-Brands/Guess/c/80221'>Guess</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Jimmy Choo' href='/Sunglasses/Sale/Brands/Featured-Brands/Jimmy-Choo/c/80224'>Jimmy Choo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Kate Spade New York' href='/Sunglasses/Sale/Brands/Featured-Brands/Kate-Spade-New-York/c/80225'>Kate Spade New York</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc by Marc Jacobs' href='/Sunglasses/Sale/Brands/Featured-Brands/Marc-by-Marc-Jacobs/c/80226'>Marc by Marc Jacobs</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Jacobs' href='/Sunglasses/Sale/Brands/Featured-Brands/Marc-Jacobs/c/80227'>Marc Jacobs</a>
+<!--<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marc Newson' href='/Sunglasses/Sale/Brands/Featured-Brands/Marc-Newson/c/80228'>Marc Newson</a>-->
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Marcel-Wanders' href='/Sunglasses/Sale/Brands/Featured-Brands/Marcel-Wanders/c/80248'>Marcel-Wanders</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Maui Jim' href='/Sunglasses/Sale/Brands/Featured-Brands/Maui-Jim/c/80229'>Maui Jim</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Max Mara' href='/Sunglasses/Sale/Brands/Featured-Brands/Max-Mara/c/80230'>Max Mara</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Miu-Miu' href='/Sunglasses/Sale/Brands/Featured-Brands/Miu-Miu/c/80249'>Miu-Miu</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oakley' href='/Sunglasses/Sale/Brands/Featured-Brands/Oakley/c/80232'>Oakley</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oliver Peoples' href='/Sunglasses/Sale/Brands/Featured-Brands/Oliver-Peoples/c/80233'>Oliver Peoples</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Oxydo' href='/Sunglasses/Sale/Brands/Featured-Brands/Oxydo/c/80234'>Oxydo</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Persol' href='/Sunglasses/Sale/Brands/Featured-Brands/Persol/c/80235'>Persol</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid' href='/Sunglasses/Sale/Brands/Featured-Brands/Polaroid/c/80236'>Polaroid</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Polaroid Kids' href='/Sunglasses/Sale/Brands/Featured-Brands/Polaroid-Kids/c/80237'>Polaroid Kids</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada' href='/Sunglasses/Sale/Brands/Featured-Brands/Prada/c/80238'>Prada</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Prada Linea Rossa' href='/Sunglasses/Sale/Brands/Featured-Brands/Prada-Linea-Rossa/c/80239'>Prada Linea Rossa</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Ray-Ban' href='/Sunglasses/Sale/Brands/Featured-Brands/Ray-Ban/c/80240'>Ray-Ban</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Smith Optics' href='/Sunglasses/Sale/Brands/Featured-Brands/Smith-Optics/c/80243'>Smith Optics</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Swatch' href='/Sunglasses/Sale/Brands/Featured-Brands/Swatch/c/80250'>Swatch</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tom Ford' href='/Sunglasses/Sale/Brands/Featured-Brands/Tom-Ford/c/80244'>Tom Ford</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Tommy Hilfiger' href='/Sunglasses/Sale/Brands/Featured-Brands/Tommy-Hilfiger/c/80245'>Tommy Hilfiger</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='Zegna' href='/Sunglasses/Sale/Brands/Featured-Brands/Zegna/c/80251'>Zegna</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	<a title='7 For All Mankind' href='/Sunglasses/Sale/Brands/Featured-Brands/7-For-All-Mankind/c/80246'>7 For All Mankind</a>
+
+<br><a title='Outlet' href='/Sunglasses/Outlet/c/90000'><strong>Outlet</strong></a>
+
+<br><strong>Up to 60% Off</strong>
+<br><strong>Extra 40% Off</strong>
+<br><strong>2 for $75</strong>
+<br><strong>Rectangle</strong>
+</div>"
+
+
+###############################################################################
+
+
+
+;;SolsticemobileGiftCardmiddlecontent;Solstice mobile giftcard page;SolsticemobileGiftCardmiddlecontent;
+
+
+#########################################################################################
+
+
+
+;;frequentlyAskedQuestion;Frequently Asked Question Page;frequentlyAskedQuestion;"<div class='faq_page'>
+	<h1>Frequently Asked Questions</h1>
+	<h2>FAQ</h2>
+	<ul class=''>
+		<li><a href='#01Answer'>01. Can I change my order?</a></li>
+		<li><a href='#02Answer'>02. Do you offer Gift box options?</a></li>
+		<li><a href='#03Answer'>03. Can I exchange or return items to a Solstice store?</a></li>
+		<li><a href='#04Answer'>04. When do I get my refund once I have returned an item?</a></li>
+		<li><a href='#05Answer'>05. What should I do if my credit/debit card has been refused when placing an order?</a></li>
+		<li><a href='#06Answer'>06. If I have questions or concerns regarding my purchase, who should I speak to?</a></li>
+		<li><a href='#07Answer'>07. How can I get defective parts or frames repaired?</a></li>
+		<li><a href='#08Answer'>08. How can I check my order status?</a></li>
+	</ul>
+	<h2>FAQ ANSWERS</h2>
+	<p><strong>01. <a name='01Answer'>Can I change my order?</a></strong></p>
+	<p>
+		Once the order has been placed, it cannot be changed online. If you want to change your order, please telephone 866-280-7620, and if it has not yet been processed we will cancel it and you can replace your order.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>02. <a name='02Answer'>Do you offer Gift box options?</a></strong></p>
+	<p>
+		Yes, your gifts can be delivered in our beautifully presented gift boxes for just $5.00 per item. Enter your personal message into the fields provided, (up to a maximum of 4 lines and 80 characters).
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>03. <a name='03Answer'>Can I exchange or return items to a Solstice store?</a></strong></p>
+	<p>
+		You may exchange an item at a Solstice store for another item. If you would like to return an item you must bring your enclosed return document to the store and we will mail the item to our returns center to be processed. Please have both a government issued ID and the original receipt available so we can process your exchange or return.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>04. <a name='04Answer'>When do I get my refund once I have returned an item?</a></strong></p>
+	<p>
+		Once we have received the item into our warehouse we will process a refund onto the original payment credit card within two weeks.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>05. <a name='05Answer'>What should I do if my credit/debit card has been refused when placing an order?</a></strong></p>
+	<p>
+		Check that all the details you have entered on the checkout page are correct. If it is refused after that, try another credit card.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>06. <a name='06Answer'>If I have questions or concerns regarding my purchase, who should I speak to?</a></strong></p>
+	<p>
+		If your issue is regarding an online shopping experience please call one of our customer service representatives on 866-280-7620 or complete the form on the Contact Us page.  If your issue is regarding one of our stores please call the Solstice corporate office at 866-246-9043.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	<p><strong>07. <a name='07Answer'>How can I get defective parts or frames repaired?</a></strong></p>
+	<p>
+		We offer an extensive warranty policy to ensure complete satisfaction. Defective parts or frames can be repaired or replaced at no cost to you. Simply bring your sunglasses, accompanied by the receipt to any Solstice Sunglass location. We will exchange the product if on hand or provide credit towards another should the glasses no longer be available.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+	
+	<p><strong>08. <a name='08Answer'>How can I check my order status?</a></strong></p>
+	<p>
+		Information regarding the status of your order will be sent to you via email. If you have not received an order confirmation email shortly after placing your order, please first check your email spam filter before calling <a href='/'>Solsticesunglasses.com</a> customer service. When your order ships from our warehouse, you will receive a shipping confirmation e-mail containing tracking information for your packages. If you've received your tracking information, go to My Account to track your shipment.
+		<span class='newline_back_top'><a class='customer_back_top' href='#top'>Back to top</a></span>
+	</p>
+</div>"
+
+
+
+###################################################################################################
+
+
+;;managingAnAccount;Managing An Account Page;managingAnAccount;"<div class='managing-account_page'>
+	<h1>Managing An Account</h1>
+	
+	<h2>Why Create An Account?</h2>
+	<p>We encourage you to create an account with <a href='/'>Solsticesunglasses.com</a> to make your shopping experience easier and faster. By creating an account you will be able to:</p>
+	<ul>
+		<li>Track and trace your orders</li>
+		<li>Store addresses for faster billing and shipping</li>
+		<li>View your past order history</li>
+	</ul>
+	<p>If you are a new customer, you may create an account by clicking on <a href='/my-account'>MY ACCOUNT/LOGIN</a> at the top right of the screen. You will be prompted to fill in your name and email and create a password. Once you have done so, click the 'submit' button.</p>
+	
+	<p><strong>Forgot Your Password Or Login?</strong></p> 
+	<p>If you have forgotten your password, please click on ' <a href='/login/pw/request'>Forgot Password</a> 'in the MY <a href='/my-account'>ACCOUNT/LOGIN</a> section of the website. Your new login and password will be sent to you via e mail.</p>
+
+	<p><strong>Address Book</strong></p>
+	<p>Your address book within <a href='/my-account'>MY ACCOUNT</a> allows you to store and edit both shipping and billing addresses for an easier checkout process. After you have created an account, you can fill in your billing and multiple shipping addresses if applicable by choosing the 'Edit' link.</p>
+
+	<p><strong>Order History</strong></p>
+	<p>With a <a href='/'>Solsticesunglasses.com</a> account, your previous purchase can be reviewed in the ORDER HISTORY section of <a href='/my-account'>MY ACCOUNT</a>.</p>
+	<p>Your privacy is important to us - all your information is stored securely and is only accessible by you. If you have any privacy questions or concerns, e-mail <a href='mailto:customersupport@solsticesunglasses.com?Subject=Privacy'>customersupport@solsticesunglasses.com</a> or view our Privacy Statement.</p>
+</div>"
+
+
+
+
+####################################################################################################
+
+
+
+;;openingAnAccount;Opening An Account Page;openingAnAccount;"<div class='openingAnAccount'>
+	<h1>Opening An Account</h1>
+	<p>Opening an Account is easy. Simply click <a href='/my-account'>My Account</a>, or when you place an order, you will be prompted to log in with your email address and password. An account offers you a safe, easy and fast way to order. It also serves as a way to track your order and receive emails about your order.</p>
+	<p><strong>Account Benefits:</strong> Set up My Account and customize your preferences. Improve you shopping experience by taking advantage of these great benefits...</p>
+	<p><strong>News and Exclusive Offers:</strong> Sign up to receive email updates on special promotions, new product announcements, gift ideas and more.</p>
+	<p><strong>Order History:</strong> Recieve important information regarding your order and the capability to track your order up to the moment it arrives.</p>
+	<p><strong>Faster Checkout:</strong> Save your billing and shipping information to make it easier to find and buy your favorite stuff. Enjoy hassle-free checkout.</p>
+	<p><strong>Save My Cart:</strong> Save My Cart for checkout at a later date.</p>
+</div>"
+    
+    
+    
+    ################################################################################################################
+;;shippingMethods;Shipping Methods Page;shippingMethods;"<div class='shippingMethodsPage'>
+	<h1>Shipping Methods</h1>
+	<div class='shippingMethodsLeft'>
+		<h2>Delivery Rates and Fees</h2>
+		<table class='deliveryRatesTable'>
+		    <tbody>
+		        <tr>
+		            <th>Method</th>
+		            <th>Estimated Delivery Time</th>
+		            <th>Shipping Fee</th>
+		        </tr>
+		        <tr>
+		            <th>Standard (ground)</th>
+		            <td>5 to 7 business days</td>
+		            <td>Free</td>
+		        </tr>
+		        <tr>
+		            <th>Express</th>
+		            <td>2 to 3 business days</td>
+		            <td>$8.90</td>
+		        </tr>
+		        <tr>
+		            <th>Next-Day</th>
+		            <td>Next business day*</td>
+		            <td>$17.90</td>
+		        </tr>
+		    </tbody>
+		</table>
+	</div>
+	<div class='shippingMethodsRight'>
+		<p class='ground_Map'><img src='/_ui/desktop/solstice/images/UPSMAP_newsite.png' alt='UPS Ground Map' /></p>
+	</div>
+
+	<p>*A $10.00 shipping fee will be added to orders shipping to HI and AK.</p>
+	<p><a href='/'>Solsticesunglasses.com</a> uses UPS or USPS as delivery carriers.</p>
+	
+	<h2>Standard Shipment:</h2>
+	<p>Following credit card authorization and verification of information, you will receive your order within approximately five to seven business days (Monday through Friday, not including holidays).</p>
+	<p>Solsticesunglass.com offers free shipping on all standard ground shipping orders.</p>
+	
+	<h2>Express Shipment:</h2>
+	<p>Orders placed with express shipping Monday through Friday (excluding holidays) before 4:00 PM ET /1:00 PM PT will arrive within two business days, pending credit card authorization and verification. Orders placed with express shipping Monday through Friday after 4:00 PM ET /1:00 PM PT, or on weekends and holidays, will arrive within two to three business days. Express shipping to rural routes and remote locations typically arrives within three to four business days.</p>
+	
+	<h2>Next-Day Shipment:</h2>
+	<p>Orders placed with next day shipping Monday through Friday (excluding holidays) before 4:00 PM ET /1:00 PM PT will arrive within one business day, pending credit card authorization and verification. Orders placed with next day shipping Monday through Friday after 4:00 PM ET /1:00 PM PT, or on weekends and holidays, will arrive within two business days. Next day shipping to rural routes and remote locations typically arrives within two to three business days.</p>
+	
+	<h2>Ship-To-Locations</h2>
+	<p><a href='/'>Solsticesunglasses.com</a> ships to all 50 U.S. states, including Alaska and Hawaii. Our online store is proud to offer shipping to APO/FPO addresses. Unfortunately, at this time we do not offer express shipping services to APO/FPO and we do not ship internationally.</p>
+	
+	<h2>Order Status and Tracking</h2>
+	<p>Information regarding the status of your order will be sent to you via email. If you have not received an order confirmation email shortly after placing your order, please first check your email spam filter before calling <a href='/'>Solsticesunglasses.com</a> customer service. When your order ships from our warehouse, you will receive a shipping confirmation e-mail containing tracking information for your packages. If you've received your tracking information, please <a target='_blank' href='https://www.ups.com/content/us/en/index.jsx'>click here</a> to track your shipment.</p>
+	<p>If you do not receive your order within five to seven days, please contact <a href='/'>Solsticesunglasses.com</a> customer service by calling 1-866-280-7620 or by emailing <a href='mailto:customersupport@solsticesunglasses.com?Subject=Not receive order'>customersupport@solsticesunglasses.com</a></p>
+</div>"
+
+
+########################################################################################################
+
+
+
+;;checkoutinfo;Checkout info Page;checkoutinfo;"<div class='checkoutContentPage'>
+	<h1>Checkout<//h1>
+	<h2>Ordering</h2>
+	<p><strong>When you are ready to complete your purchase, simply go to Checkout and follow these steps to place your order:</strong></p>
+	
+	<h2>For registered users</h2>
+	<p>If you are a returning customer and have an account at <a href='/'>Solsticesunglasses.com</a>, please sign in using your email address and password and you will be taken directly to the first Checkout tab.</p>
+	
+	<h2>For non-registered users.</h2>
+	<p>If you are not registered, you can proceed without creating an account or you can create an account.</p>
+	
+	<h2>Billing and Shipping Tab</h2>
+	<p>Enter your billing information as it appears on your credit card statement. Your credit card will not be accepted without the appropriate billing address and telephone number. If you are a returning customer, your billing address will automatically appear on the Billing and Shipping page. If the shipping address is different than the billing address, enter the address where you would like your order shipped.</p>
+	
+	<h2>Shipping Options</h2>
+	<p>From the options provided, select from the shipping methods that are available for the item(s) you wish to purchase. For more information on shipping, click here.</p>
+	
+	<h2>Payment Information</h2>
+	<p>At this time, you must verify your address information is correct, review your order and then enter your payment method and click 'Place Order'. For more information on payment,click here.</p>
+	
+	<h2>Purchase Summary</h2>
+	<p>After you complete the checkout process, the Purchase Summary page confirms detailed of the order you have placed and also provides you with a Purchase Summary reference number. We recommend that you print this Purchase Summary page for your records as it may be needed for order references.</p>
+	
+	<h2>Order and Shipment Confirmations</h2>
+	<p>You will receive an order confirmation email which will include an order number - you can use this to track your order in My Account Once your items have been shipped, you will receive a shipping confirmation email with details of which item/items have been sent. Please note that if you order more than one item, it is possible that different items may arrive on different days depending on stock availability.</p>
+</div>"
+
+#####################################################################################################
+
+
+;;validPaymentMethods;Valid Payment Methods Page;validPaymentMethods;"<div class='validPaymentMethodsPage'>
+	<h1>Valid Payment Methods</h1>
+
+    <p>Payment for all goods must be by credit or debit card.</p>
+
+    <p>We accept payment with:</p>
+    <ul class='validPaymentMethodsUl'>
+        <li>VISA</li>
+        <li>MASTERCARD</li>
+        <li>AMERICAN EXPRESS</li>
+        <li>DISCOVER</li>
+	</ul>
+</div>"
+
+
+
+#######################################################################################################
+
+;;informationAboutReturns;Information About Returns Page;informationAboutReturns;"<div class='informationAboutPage'>
+	<h1>Information About Returns</h1>
+	<h2><strong>Returns and Exchanges:</strong></h2>
+	<p>Solstice will gladly accept any merchandise purchased from <a href='/'>Solsticesunglasses.com</a>. Merchandise can be returned within 90 days of delivery in its original, unused condition for a full refund or exchange. For your convenience, we’ve provided two different options.</p>	
+	<p><strong>In-Store:</strong> You may choose to return or exchange your product to a Solstice location near you. Please have both a government-issued ID and the original receipt available to receive a full refund or exchange in the original form of payment. Returns without a receipt will be issued a store credit for the current selling price.</p>
+	<p><strong>By Mail:</strong> If you would like to make a return or exchange by mail, please follow these instructions:</p>
+	<ul class='informationAboutUl'>
+		<li>1) Contact customer service to have a return shipping label emailed to you. You can contact customer service by calling 866-280-7620 or by emailing <a href='mailto:customersupport@solsticesunglasses.com?Subject=return%20shipping'>customersupport@solsticesunglasses.com</a>.</li>
+		<li>2) Fill out form included in your package.</li>
+		<li>3) You are required to repack the merchandise in its original condition and include the return form included in your package.</li>
+		<li>4) Place the prepaid UPS return shipping label that was emailed to you on the outside of your box. Please keep the return tracking number for your records.</li>
+		<li>5) Drop your package off at either a UPS Drop Box, a UPS store, or at any other location that has regular UPS pick up (visit www.ups.com for a location convenient to you). There is no fee for the use of this label; if you choose an alternative carrier an additional fee will apply.</li>
+	</ul>
+	<p>Please allow 14 business days for receipt and processing of your returned merchandise. A credit will be issued to the original payment method. Store purchases cannot be returned by mail. </p>
+	<p><strong>Our Guarantee:</strong> Solstice understands how important after sales service is to our clients. We provide free cleanings and adjustments in all locations for the life of your glasses. We also offer an extensive warranty policy to ensure complete satisfaction. Defective parts or frames can be repaired or replaced at no cost to you. Simply bring your sunglasses, accompanied by the receipt, to any Solstice Sunglass location. We will exchange the product if on hand, or provide credit towards another pair should the glasses no longer be available.</p>
+	<p>For more information or assistance, please feel free to call 866-280-7620 or email <a href='mailto:customersupport@solsticesunglasses.com?Subject=return%20shipping'>customersupport@solsticesunglasses.com</a>.</p>
+</div>"
+
+#####################################################################################################################################
+
+
+;;termsConditionsSale;Terms Conditions Sale Page;termsConditionsSale;"<div class='termsConditionsSalePage'>
+	<h1>Terms & Conditions of Sale</h1> 
+	<p><strong>1. INTRODUCTION</strong></p>
+	<p>Welcome to <a href='/'>www.solsticesunglasses.com</a>, the online store of Solstice Sunglass Boutique (hereinafter the 'Solstice Sunglasses Site' or 'Site'), which is operated by Solstice Sunglass Boutique (hereinafter referred to as 'Solstice Sunglass Boutique', 'we', 'us' or 'our'). The following terms and conditions and any other terms and conditions, agreements or policies set forth in the Customer Help Center or incorporated by reference, including without limitation, the Privacy Statement, (collectively the 'Terms and Conditions') govern your access to and use of the Solstice Sunglass Site and sales of products offered on the Solstice sunglass Site.</p>
+	
+	<p><strong>2. SCOPE</strong></p>
+	<p>These Terms and Conditions only cover the web pages at www.solsticesunglasses.com-store.com that we control and on which we display a direct link to these Terms and Conditions. They do not apply to any other web page including, without limitation, web pages at <a href='/'>solsticesunglasses.com</a></p>
+	
+	<p><strong>3. LIABILITY, DISCLAIMER</strong></p>
+	<p>3.1</p>
+	<p>You are responsible for all your activities on and in connection with the Solstice Sunglass Site.</p>
+	<p>3.2</p>
+	<p>While Solstice Sunglasses continues to make every effort to ensure that the photographs displayed on the Solstice Sunglasses Site are faithful reproductions of the original products, variations may occur due to the technical and color resolution characteristics of your computer. Solstice Sunglasses shall not be liable for the eventual inadequacy of the graphic representations of Solstice Sunglasses products displayed on the Solstice Sunglasses Site owing to the above mentioned technical issues.</p>
+	<p>3.3</p>
+	<p>Solstice Sunglasses will ensure proper care and maintenance of the Solstice Sunglasses Site. However, Solstice Sunglasses gives no guarantee that the Solstice Sunglasses Site will be accessible at all times. Solstice Sunglasses also does not guarantee that the Solstice Sunglasses Site will always be in the most up-to-date condition and free of defects. It is possible that delays, transcription errors or even misinformation could occur. Solstice Sunglasses takes all possible steps to ensure the accuracy and timeliness of the information included on the Site, but cannot absolutely guarantee the accuracy, completeness or timeliness of the information provided on the Site.</p>
+	<p>3.4</p>
+	<p>IN NO EVENT, SHALL SOLSTICE SUNGLASSES, OR ANY OF ITS AFFILIATES, AND ITS AND THEIR OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, AGENTS, REPRESENTATIVES OR LICENSORS OR SUCCESSORS OR ASSIGNEES OF EACH BE LIABLE HEREUNDER, UNDER ANY THEORY OF LIABILITY WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE AND STRICT LIABILITY) FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES OR FOR LOSS OF PROFITS, REVENUE, DATA OR PROGRAMMING, WHETHER IN AN ACTION IN CONTRACT, TORT, PRODUCT LIABILITY, STATUTORY OR OTHERWISE (EVEN IF SOLSTICE SUNGLASSES HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES) ARISING OUT OF (A) YOUR USE OF THE SITE, INCLUDING, BUT NOT LIMITED TO, ANY LOSS OR DAMAGE CAUSED BY ANY RELIANCE ON, OR ANY DELAYS, INACCURACIES, ERRORS OR OMISSIONS IN, ANY INFORMATION ACCESSED ON OR THROUGH THE SITE, (B) ANY TRANSACTION ENTERED INTO THROUGH OR FROM THE SITE, (C) YOUR INABILITY TO USE THE SITE FOR WHATEVER REASON, INCLUDING, BUT NOT LIMITED TO, COMMUNICATIONS FAILURE OR ANY OTHER FAILURE WITH TRANSMISSION OR DELIVERY OF ANY INFORMATION ACCESSED ON OR THOUGH THE SITE, (D) THE DELETION, CORRECTION, DESTRUCTION, DAMAGE, LOSS OR FAILURE TO STORE ANY INFORMATION, (E) THE USE OF ANY PRODUCTS OR SERVICES OBTAINED ON OR THROUGH THE SITE, (F) UNAUTHORIZED ACCESS TO THE SITE AND UNAUTHORIZED ALTERATION TO TRANSMISSIONS OR DATA, (G) STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE, OR (H) ANY OTHER MATTER RELATING TO THE SITE.</p>
+	<p>3.5</p>
+	<p>Exclusive remedies. YOUR SOLE AND EXCLUSIVE REMEDY FOR ANY DISSATISFACTION, DEFECTS, ERRORS OR PROBLEMS REGARDING (A) THE SITE SHALL BE THAT YOU LEAVE THE SITE, AND (B) ANY PRODUCTS THAT YOU PURCHASE OR ATTEMPT TO PURCHASE VIA THE SITE SHALL BE AS EXPRESSLY SET FORTH IN OUR RETURN AND CANCELLATION POLICIES.</p>
+	<p>3.6</p>
+	<p>Force Majeure. Except for payment obligations, non-performance or late performance of either party shall be excused to the extent that performance is rendered impossible, commercially unreasonable, or delayed by strike, fire, flood, governmental acts or orders or restrictions, war, acts of terrorism, labor conditions, supply restrictions, communication or shipment problems, failure of suppliers, or any other reason where failure to perform is beyond the reasonable control of the non-performing or late-performing party whether or not similar to the foregoing.</p>
+	
+	<p><strong>4. USER BEHAVIOR</strong></p>
+	<p>4.1</p>
+	<p>As a user of the Solstice Sunglasses Site you are required to comply with the law of the State of New York and of the United States, and agree that any action resulting in connection with these Terms and Conditions will be brought in the U.S. District Court for the Southern District of New York.</p>
+	<p>4.2</p>
+	<p>In particular, you are not permitted to send (or otherwise make available) content over the Solstice Sunglasses Site or make it available which is libelous, defamatory, obscene, harmful or pornographic, or promotes violence, or violates privacy, infringes commercial protected rights or offer goods or services or solicits financial funds.</p>
+	<p>4.3</p>
+	<p>User activities, the purpose of which are to render the Solstice Sunglasses Site functionally defective or make use of it more difficult, are prohibited and could give rise to civil and criminal proceedings.</p>
+	<p>4.4</p>
+	<p>The Solstice Sunglasses Site (including its services) may also not be used for illegal purposes. It is prohibited to register third parties without their knowledge and explicit consent for the online store services or any other services, contests or sweepstakes advertised on the Solstice Sunglasses Site.</p>
+	
+	<p><strong>5. COPYRIGHT</strong></p>
+	<p>5.1</p>
+	<p>All materials contained in the Solstice Sunglasses site, including web pages, programs, graphics, images, trademarks, logos, sound, video, scripts and texts ('Content') are intellectual property of Solstice Sunglasses or its affiliates. All rights are reserved. You may not reproduce, publish, distribute, display, modify, create derivative work from, or in any way, in whole or in part, the Content without the prior express written consent of Solstice Sunglasses.</p>
+	<p>5.2</p>
+	<p>Except as otherwise explicitly indicated on the Solstice Sunglasses Site, you should assume that everything which you see or read on this Site is subject to legal protection. Subject to these Terms and Conditions, and except as otherwise indicated on the Solstice Sunglasses Site, you may use, access, download, copy, store, manipulate, reformat, print or display any Content to which you have authorized access solely for your personal, informational and non-commercial use. No right, title and/or interest in any material, software or Content may be deemed assigned to you as a result of any such download or copying. Any copies must contain a copyright reference to Solstice Sunglasses. References given to protected rights must not be removed. Any commercial and/or public use of the Content or any part thereof is prohibited.</p>
+	<p>5.3</p>
+	<p>Solstice Sunglasses and its content providers shall have the exclusive right to authorize or prohibit, in their sole discretion, any reproduction, publication, distribution, display, modification, creation of derivative works from, or exploitation in any way of, in whole or in part, the Content. Solstice Sunglasses, its affiliates, and its content providers shall have the right, at any time, to claim the authorship of any Content posted on the Solstice Sunglasses Site and to object to any use, distortion or other modification of such Content.</p>
+	<p>5.4</p>
+	<p>Any reproduction, publication, distribution, display, modification, creation of derivative works from, or exploitation in any way of, the Content expressly authorized in writing by Solstice Sunglasses, its affiliates, or their content providers shall be carried out by you for lawful purposes only and in compliance with all applicable laws and the Terms and Conditions.</p>
+	<p>5.5</p>
+	<p>If you believe that your work has been copied in a way that constitutes copyright infringement, please provide our copyright representative the written information specified below:</p>
+	<p>(a)</p>
+	<p>An electronic or physical signature of the person authorized to act on behalf of the owner of the copyright interest.</p>
+	<p>(b)</p>
+	<p>A description of the copyrighted work that you claim has been infringed upon.</p>
+	<p>(c)</p>
+	<p>A description of where the material that you claim is infringing is located on the Solstice Sunglasses Site.</p>
+	<p>(d)</p>
+	<p>Your address, telephone number, and e-mail address.</p>
+	<p>(e)</p>
+	<p>A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent or the law; and</p>
+	<p>(f)</p>
+	<p>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</p>
+	<p>(g)</p>
+	<p>Our copyright representative for notice of claims of copyright infringement can be contacted at the following e-mail address: <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+	
+	<p><strong>6. TRADEMARKS, SERVICE MARKS AND TRADE DRESS</strong></p>
+	<p>6.1</p>
+	<p>The trademarks and logos, whether registered or not, displayed on the Solstice Sunglasses Site, including, without limitation, Solstice and Sunglasses, and all derivative trademarks, are owned by Solstice Sunglasses or its affiliates. The domain names of the Solstice Sunglasses Site are registered domain names in the United States and in other countries owned by Solstice Sunglasses or its affiliates.</p>
+	<p>6.2</p>
+	<p>These and any other trademarks, service marks and trade dress of Solstice Sunglasses or its affiliates, including, but not limited to any mark that incorporates the above listed marks or the domain names of the Solstice Sunglasses Site, may not be used by you in connection with any product or service that does not originate with Solstice Sunglasses, in any manner that is likely to cause confusion among consumer, or in any manner that disparages, discredits or tarnishes Solstice Sunglasses or that dilutes the distinctive character of these trademarks.</p>
+	<p>6.3</p>
+	<p>All other trademarks, service marks and trade dress not owned by Solstice Sunglasses or its affiliates that appear on the Solstice Sunglasses Site are the property of the respective owners ('Third Party Owners'), who may or may not be affiliated with, connected to, or sponsored by Solstice Sunglasses or its affiliates.</p>
+	<p>6.4</p>
+	<p>Solstice Sunglasses, its affiliates and all Third Party Owners are entitled to the exclusive use of their respective trademarks, service marks and trade dress.</p>
+	<p>6.5</p>
+	<p>You are not authorized to use any of the trademarks, service marks and trade dress that appear on the Solstice Sunglasses Site in any manner for any purpose without the prior express written consent of Solstice Sunglasses or the respective Third Party Owner, as the case may be.</p>
+	
+	<p><strong>7. NO LICENSE</strong></p>
+	<p>7.1</p>
+	<p>Without the approval of Solstice Sunglasses or of its relevant licensor in writing, no license or other right to the use of the contents on the Solstice Sunglasses Site is granted either explicitly or implicitly or in any other way. Any unauthorized use of the materials is strictly prohibited and will be subject to civil and criminal prosecution by Solstice Sunglasses.</p>
+	<p>7.2</p>
+	<p>The viewing, printing or downloading of any graphic, form, document or other content from the Solstice Sunglasses Site grants you only a limited, nonexclusive and nontransferable license for use solely by you for your own personal use and not for republication, distribution, assignment, sublicense, sale, preparation of derivative works or other use. No part of any graphic, form, document or other content may be reproduced in any form or incorporated into any information system, electronic or mechanical, other than for your personal use (but not for resale or redistribution). Any unauthorized use of the Solstice Sunglasses Site and their contents terminates the license granted hereby.</p>
+	
+	<p><strong>8. SUBMISSIONS</strong></p>
+	<p>8.1</p>
+	<p>All notices, proposals, ideas, feedback, comments, complaints and other contents which you provide to Solstice Sunglasses, will be regarded as provided on a non-confidential basis. Solstice Sunglasses reserves the right to use this information at its exclusive discretion. Solstice Sunglasses is not subject to any obligation (i) to treat the submissions as confidential or (ii) to respond to any submissions. You are responsible for ensuring that none of your submissions infringe the rights of third parties (including copyright, trademark, patent, commercial secrecy, privacy or other personal rights or intellectual property rights) and to that extent indemnify Solstice Sunglasses from all claims of third parties, including attorneys' fees.</p>
+	
+	<p><strong>9. PRIVACY</strong></p>
+	<p>9.1</p>
+	<p>The terms and conditions of our Privacy Statement govern the collection, processing and use of personal data collected from you in connection with your use of the Solstice Sunglasses Site.</p>
+	
+	<p><strong>10. LINKS</strong></p>
+	<p>10.1</p>
+	<p>The Solstice Sunglasses Site contains links to other websites maintained by affiliates of Solstice Sunglasses ('Affiliated Sites'), including, but not limited to, links to <a href='/'>www.solsticesunglasses.com</a>. These Affiliated Sites are not operated by Solstice Sunglasses., the operator of this Site, but by its affiliates. Please carefully read the terms and conditions of use and other policies of such Affiliated Sites. These Terms and Conditions do not apply to any Affiliated Sites.</p>
+	<p>10.2</p>
+	<p>In some circumstances, the Site will contain links to other websites ('Third Party Websites'). Solstice Sunglasses or its affiliates do not operate, control, endorse or guarantee the contents of any Third Party Websites. Solstice Sunglasses is not liable either for the accuracy of the content of these websites or for the material which can be obtained from these websites. You agree that Solstice Sunglasses and its affiliates are not responsible for any content, services and/or products provided by any Third Party Website. When you access any Third Party Website through a hyperlink posted on this Site, please carefully read the terms and conditions of use and other policies of such Third Party Website. These Terms and Conditions do not apply to any Third Party Website.</p>
+	<p>10.3</p>
+	<p>Solstice Sunglasses provides hyperlinks to Third Party Websites only for the convenience of users. By providing hyperlinks to Third Party Websites, Solstice Sunglasses does not recommend that its users access such Third Party Websites. YOU AGREE THAT YOUR USE OF ANY THIRD PARTY WEBSITE IS AT YOUR SOLE RISK AND WITHOUT WARRANTIES OF ANY KIND BY SOLSTICE SUNGLASSES OR ITS AFFILIATES, EXPRESS, IMPLIED OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY AND NONINFRINGEMENT. IN NO EVENT SHALL SOLSTICE SUNGLASSES OR ITS AFFILIATES LIABLE FOR DAMAGES ARISING FROM ANY TRANSACTION BETWEEN YOU AND ANY THIRD PARTY WEBSITE OR FOR ANY INFORMATION APPEARING ON THIRD PARTY WEBSITES.</p>
+	
+	<p><strong>11.PURCHASE OF PRODUCTS</strong></p>
+	<p>11.1</p>
+	<p>Private use only. By submitting your order, you represent that you are purchasing for private household use only. We do not authorize any sale of our products outside the U.S. or any commercial resale. We reserve the right to reject orders and limit order quantities in our sole discretion.</p>
+	<p>11.2</p>
+	<p>Product information and availability. Without limiting the generality of the disclaimers and limitations set forth in these Terms and Conditions, given the unique nature of our products we cannot assume any liability or responsibility for any inaccuracies or errors, or for any loss or damage caused by or arising from your reliance on information obtained from or through this Site and we may change information at any time. We determine product availability upon receipt and automatic acknowledgement of orders.</p>
+	<p>11.3</p>
+	<p>Price, payment, taxes. By submitting your order via the Site, you agree to pay the purchase price for the items you selected plus shipping and handling costs, and applicable sales tax, if any. Depending on the tax laws in your state, you may be required to pay use tax on purchases for which we do not collect sales tax.</p>
+	<p>11.4</p>
+	<p>Delivery. We will deliver the products you purchased to a common carrier at our warehouse for shipment to the destination in the continental United States that you select (we do not ship to Canada); other details regarding shipping and delivery are described in our Shipping Policy. You receive title and you bear all risks of loss and damage to the products from the time we deliver the products to the carrier at our warehouse.</p>
+	<p>11.5</p>
+	<p>Cancellations, returns. We do not accept any cancellations or returns except as specified in our Return & Cancellation Policies or required by applicable law. Without limiting the generality of the foregoing, we do not accept any returns from Solstice Sunglasses retail stores.</p>
+	
+	<p><strong>12. INDEMNIFICATION</strong></p>
+	<p>12.1</p>
+	<p>To the extent permitted by law, you agree to indemnify, defend and hold Solstice Sunglasses and its affiliates harmless from any liability, loss, claim, expense, and cost, including reasonable attorneys' fees, arising from or related to your use of this Site and/or your breach of these Terms and Conditions.</p>
+	
+	<p><strong>13. MISCELLANEOUS</strong></p>
+	<p>13.1</p>
+	<p>These Terms and Conditions constitute the entire, full and complete agreement between yourself and Solstice Sunglasses.</p>
+	<p>13.2</p>
+	<p>Solstice Sunglasses reserves the right at any time and from time to time to change the present Terms and Conditions and to modify or discontinue temporarily or permanently, the Site (or any part thereof) with or without notice. This also includes modifying or completely ceasing specific offers and services with a cost obligation. You agree that Solstice Sunglasses shall not be liable to you or any third party for any modification, suspension or discontinuance of the Site.</p>
+	<p>13.3</p>
+	<p>Each section, paragraph, part, term, and/or provision of these Terms and Conditions shall be considered severable; and if, for any reason, any provision herein is determined to be invalid and contrary to, or in conflict with, any existing or future law or regulation by a court or agency having valid jurisdiction, such provision shall not impair the operation, or have any other effect upon, other provisions of these Terms and Conditions as may remain otherwise intelligible, and the latter shall continue to be given full force and effect to bind you and Solstice Sunglasses; and said invalid provisions shall be deemed not to be part of these Terms and Conditions.</p>
+	<p>13.4</p>
+	<p>The law of the State of New York and of the United States, excluding their choice of law provisions, will be applicable.</p>
+	<p>13.5</p>
+	<p>The legal venue is the U.S. District Court for the Southern District of New York.</p>
+	<p>13.6</p>
+	<p>The present Terms and Conditions can be downloaded as PDF.</p>
+	
+	<p><strong>14. CONTACTING US</strong></p>
+	<p>Please feel free to contact us with any comments, questions, complaints or suggestions you may have regarding our products or the Site by sending an e-mail <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+</div>"
+
+
+
+
+#############################################################################################################################
+
+;;privacyPolicy;Privacy Policy Page;privacyPolicy;"<div class='privacyPolicyPage'>
+	<h1>Privacy Policy</h1>
+	<p><strong>Privacy Statement</strong></p>
+	<p>In this Website Privacy Statement ('Statement'), we, Solstice Sunglasses (hereinafter referred to as 'Solstice Sunglasses', 'we', 'us' or 'our'), describe what personal information we collect through those web pages at <a href='/'>solsticesunglasses.com</a> that we control and on which we display a direct link to this Statement (the 'Site') and how we collect and use such data.</p>
+	
+	<p>Scope</p>
+	<p>This Statement covers only data collected through the Site. It does not apply to any other data including, without limitation, data that we collect through other web pages at <a href='/'>www.solsticesunglasses.com</a> or offline, or data that others collect on websites that are linked or linking to the Site.</p>
+	
+	<p>ypes of Data Solstice Sunglasses Collects, Collection Methods, and Collection Purposes</p>
+	
+	<p>Through the Site, we receive and collect data that you actively submit as well as data that we passively track:</p>
+	<p>Actively Submitted Data: When you purchase products through our Site, sign up for a newsletter, participate in promotions or otherwise actively send us data, you are providing, and we collect, data such as your name, email address(es), billing address(es), delivery address(es), telephone number(s), and credit card information. In each such instance, you will know what data we collect through the Site, because you actively submit it. We collect actively submitted data primarily for the purpose for which you originally sent us the data (for example, to sell and deliver products). We may also use this data internally as research data to improve our products and services, and for purposes of advertising, promoting, and informing you about products, services, initiatives, and events; you can opt out of receiving marketing emails as explained below.</p>
+	<p>Passively Tracked Data: When you visit the Site, we also passively track information on your computer and Internet connection, such as the IP address of your computer and/or Internet service provider, the date and time you access the Site, the Internet address of websites from which you link to our Site, the computer technology you are using and your movements and preferences on our Site. We use technology that many other websites employ, including, without limitation, cookies, to collect information such as the aforementioned. We may also use such cookies to collect information in connection with future visits from that Site, to recognize you as a previous visitor and to track your activity on the Site. You may set your browser to notify you when a cookie is sent or to refuse cookies altogether, but certain features of the Site might not work without cookies. We reserve our right to also use other technologies such as Internet tags, web beacons, and navigational data collection tools (log files, server logs, or click stream). We collect passively tracked data primarily for purposes of administering, protecting and improving our Site and our systems, to better understand the preferences of our Site visitors, to identify server problems, to compile aggregated statistics about Site usage, to help personalize your experience of our Site, and to personalize offers.</p>
+	<p>Combinations: We may combine passively tracked data with data that you actively submit so as to, for instance, provide better service to Site visitors, customize the Site based on your preferences, compile and analyze statistics and trends, to otherwise administer and improve the Site for your use, and to personalize offers (for example, combined information may allow us to recommend products to you based on what you have liked in the past).</p>
+	
+	<p>Disclosure of Personal Information</p>
+	<p>We are not in the business of selling or renting your information to telemarketers. We do not share your personal information with others, except as follows:</p>
+	
+	<ul class='privacyPolicyUl'>
+		<li>We freely share your information with our corporate affiliates</li>
+		<li>We also grant access to your information to affiliated and unaffiliated service providers and third parties that process or maintain data on our behalf, freight forwarders, carriers, and such individuals or companies that conduct, manage or otherwise handle our marketing and promotional campaigns. Such third parties are subject to strict confidentiality obligations and may access and use your information only in accordance with our instructions and not for their own purposes.</li>
+		<li>We may also share your information to respond to law enforcement requests, court orders or other legal process or if we believe that such disclosure is necessary to investigate, prevent or respond to illegal activities, fraud, physical threats to you or others or as otherwise required by any applicable law or regulation.</li>
+		<li>Finally, we may share or transfer your information in connection with a prospective or actual sale, merger, transfer or other reorganization of all or parts of our business.</li>
+	</ul>
+	
+	<p>Access and Correction</p>
+	<p>Please keep your personally identifiable information, accurate, current, and complete by routinely updating your user profile or by contacting us as specified below.</p>
+	
+	<p>Security</p>
+	<p>We take reasonable steps to protect personally identifiable information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. But, you should keep in mind that no Internet transmission is ever completely secure or error-free. In particular, e-mail sent to or from the Sites may not be secure.</p>
+	<p>Opt-Out, Communication Preferences</p>
+	<p>You may modify your communication preferences and/or opt-out from specific communications at any time by choosing the unsubscribed option in the e-mail.</p>
+	
+	<p>Links to Other Web Sites</p>
+	<p>This Site contains links and references to other web pages to which this Privacy Statement does not apply. We encourage you to read the privacy statement or policy of every web page you visit.</p>
+	
+	<p>Contact Us (regarding California Privacy Rights or other topics)</p>
+	<p>Please feel free to contact us with any comments, questions, complaints or suggestions you might have regarding the information practices described in this Statement as follows.</p>
+	<p>California Civil Code Section 1798.83 permits Solstice Sunglasses customers who are California residents to request certain information regarding its disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+	
+	<p>Technical Information</p>
+	<p>The Solstice Sunglasses Online Store has been optimized for a screen resolution of 1024 x 768 px. You will also need a recent version of a browser such as Internet Explorer, Mozilla, Firefox, Safari or Opera. To enjoy the full range of features offered by the Online Store, you will also need a recent version of the Flash Player plug-in (version 9 or higher).</p>
+</div>"
+
+
+
+#############################################################################################################################
+
+
+
+;;securityPolicy;Security Policy Page;securityPolicy;"<div class='securityPolicyPage'>
+	<h1>Security Policy</h1>
+	
+	<h2>Security Policy</h2>
+	<p>At <a href='/'>Solsticesunglasses.com</a>, we know that keeping your credit card information secure is important to you. That makes it very important to us. We use Secure Socket Layer (SSL) 128bit encryption technology to protect your online information.</p>
+	
+	<h2>How do we make sure information is secure? </h2>
+	<p>We use the latest encryption technology (Secure Sockets Layer, or SSL) to secure your personal information. The information you provide when you place an order is encrypted (or coded) using a secure server for maximum security. This coding makes it extremely difficult for anyone to reach your information as it moves through our ordering system.</p>
+	<p>Certain browsers will not allow communication through secure servers. If this is the case, you won't be able to place an order online. If you have any problems placing an order online please print your shopping page and place your order by phone at 866-280-7620.</p>
+	<p>To check the security of your computer, look at the lower left-hand corner of your browser window if you are using Netscape, or the lower right-hand corner of your browser window if you are using Internet Explorer. If you see an unbroken key or a closed lock, then the encryption technology is active and the server is secure. You can also check by looking at the URL line of your browser; when you access a secure server, the initial characters of the site address will be 'https.'</p>
+	
+	<h2>What if you link to another site? </h2>
+	<p>Our website may provide links to other websites that are not under our control. Neither we nor the third party service providers who manage our website are responsible for these linked websites, their content or for the actions of the providers of such sites. We recommend that you review the privacy and security policies and terms of use for any websites you use.</p>
+	
+	<h2>Do I have to turn the security feature on when I want to shop?</h2>
+	<p>The security features are automatic, and always on. You don't have to do anything but shop. Clicking 'Checkout' on any page is all it takes to get started in our secure checkout process.</p>
+	
+	<h2>How do I know if I'm connected when I start ordering? </h2>
+	<p>Once you've clicked the 'Continue Checkout' button, your browser looks for a digital certificate to confirm that it's communicating with our web-site. Once a positive ID is made, your order will continue securely.</p>
+	
+	<h2>Are all the pages on your web-site secure?</h2>
+	<p>Most of the pages on our website provide information about Solstice Sunglasses and our products. We make this information available freely and there's no reason for these pages to be 'secure.' The pages that we make secure are the ones on which you actually make the purchase, such as when managing your account, checking your order status, or within the 'Checkout' area. For example, the entire checkout process, from introduction to final confirmation, is completely secure.</p>
+	
+	<h2>Is my information secure when it's transmitted across the Internet? </h2>
+	<p>All of your information is encrypted before it's transmitted across the Internet, then decoded only after it arrives at our secure servers.</p>
+	
+	<h2>Consent</h2>
+	<p>We take the privacy rights of users of this Site very seriously and this Privacy Policy explains to You how certain information about You may be processed.</p>
+</div>"
+
+
+#########################################################################################################
+
+;;changingCancelingOrder;Changing Canceling Order Page;changingCancelingOrder;"<div class='changingCancelingOrderPage'>
+	<h1>Changing or Canceling an Order</h1>
+	<p><a href='/'>Solsticesunglasses.com</a> cannot change an order once it has been submitted. If you would like to change your order, you must first cancel the order and place a new one. To cancel an order after it has been submitted, please contact the <a href='/'>Solsticesunglasses.com</a> customer service center immediately either by calling 1-866-280-7620 or emailing <a href='mailto:customersupport@solsticesunglasses.com?Subject='>customersupport@solsticesunglasses.com</a></p>
+	<p>If the order has not yet been processed, a customer service representative will be able to cancel your order. If the order has already been processed and you would still like to cancel your purchase, please follow the return instructions after receiving your package.</p>
+</div>"
+
+
+     
+
+    
+
+
+
+
+
+
+
+
