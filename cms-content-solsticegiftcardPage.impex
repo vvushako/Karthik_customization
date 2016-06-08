@@ -1,0 +1,48 @@
+############# Import the CMS content for register page of Solstice ##############################
+$contentCatalog=solsticeContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$jarResourceCms=jar:com.so.core.setup.CoreSystemSetup&/smithopticscore/import/cockpits/cmscockpit
+$siteResource=jar:com.so.core.setup.CoreSystemSetup&/smithopticscore/import/contentCatalogs/solsticeContentCatalog
+# These define sets of components that can fit into similar slots
+
+########################## page template defined ###########################
+INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+;;SolsticeGiftCardPageTemplate;Solstice GiftCard PageTemplate;solstice/solsticeGiftProductLayoutPage;ContentPage;;$jarResourceCms/structure-view/structure_solsticeGiftcardPageTemplate.vm
+########################## END ###########################################
+
+######################### Define content SlotNames #############################
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='SolsticeGiftCardPageTemplate'];validComponentTypes(code)
+;giftCardNameHeader;;CMSParagraphComponent
+
+
+###########################END##################################################
+
+######################### Define content Slots #############################
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
+;;giftCardNameHeaderSlot;Gift Card Name Header Slot;true
+
+############################END################################################
+
+########################### Define Content slots for template ######################
+INSERT_UPDATE ContentSlotForTemplate;$contentCV;uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='SolsticeGiftCardPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+#common content
+;;SiteLogo-solsticeGiftCardPage;SiteLogo;;SiteLogoSlot;true
+;;MiniCart-solsticeGiftCardPage;MiniCart;;MiniCartSlot;true
+;;NavigationBar-solsticeGiftCardPage;NavigationBar;;NavigationBarSlot;true
+;;SocialAndShare-solsticeGiftCardPage;SocialAndShare;;SocialAndShareSlot;true
+;;Footer-solsticeGiftCardPage;Footer;;FooterSlot;true
+;;FooterNav-solsticeGiftCardPage;FooterNav;;FooterNavSlot;true
+;;FreeShippings-solsticeGiftCardPage;FreeShippings;;FreeShippingsSlot;true
+
+########################### END ################################################
+
+########################### Define Content slots for page######################
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='solsticeGiftCardPage'];contentSlot(uid,$contentCV)[unique=true]
+;;giftCardNameHeaderSlot-solsticeGiftCardPage;giftCardNameHeader;;giftCardNameHeaderSlot
+
+#############################END################################################
+
+####################### Define Content Page ###################################
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;solsticeGiftCardPage;Solstice GiftCard Page;SolsticeGiftCardPageTemplate;solsticeGiftCard;;;;
+####################### END #######################################
